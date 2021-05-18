@@ -1,0 +1,356 @@
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Рейтинги - тесты</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../style/libs/bootstrap.min.css">
+    <link rel="stylesheet" href="../../style/libs/select2.min.css">
+    <link rel="stylesheet" href="../../style/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="../../style/roman.css">
+    <link rel="stylesheet" href="../../style/i-style/style.css">
+    <link rel="stylesheet" href="../../style/media.css"> 
+    <!-- Styles -->
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+
+</head>
+
+<body>
+    <div id="background" class="bg-blue"></div>
+    <div id="papa">
+        <header id="header">
+            <div class="logo">
+                <a href="../../courses.html"><img src="../../img/logo.png" alt=""></a>
+                <div id="menu-3-lines" class="menu-absolute">
+                    <div class="line top-line"></div>
+                    <div class="line mid-line"></div>
+                    <div class="line bot-line"></div>
+                </div>
+            </div>
+            <div class="right-block flex a-c">
+                <nav class="header-navigation" id="left-menu">
+                    <ul class="menu">
+                        <li><a class="active-menu menu-item" href="">Обучение</a></li>
+                        <li><a class="menu-item" href="">Консалтинг</a></li>
+                        <li><a class="menu-item" href="">О нас</a></li>
+                        <li><a class="menu-item" href="">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div id="header-bell" class="bell p-r">
+                    <div class="bell-notifications">3</div>
+                    <a href="../../notifications.html"><i class="bell-img i-bell"></i></a>
+                </div>
+            </div>
+        </header>
+        <aside id="left-side-bar">
+            <div id="mobile-menu">
+            </div>
+            <div class="top-pearson-info flex j-c a-c f-d-c m-a mt-40">
+                <div class="pearson-photo">
+                    <img src="../../img/corp/avatar.png" alt="">
+                </div>
+                <div class="pearson-name">
+                    Протасова Александра
+                </div>
+            </div>
+            <nav id="pearson-nav">
+                <ul>
+                    <li>
+                        <a href="general.html">
+                            <img src="../../img/corp/icons/ratings.png" alt="icon" class="icon-li">
+                            <span class="active-menu">Рейтинги</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../constructor/courses.html">
+                            <img src="../../img/corp/icons/settings.png" alt="icon" class="icon-li">
+                            <span>Конструктор</span>
+                        </a>
+                    </li>
+                    <li style="display: none;">
+                        <a href="#">
+                            <img src="../../img/corp/icons/team.png" alt="icon" class="icon-li">
+                            <span>Корпоративное обучение</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../courses.html">
+                            <img src="../../img/icon/book.png" alt="icon" class="icon-li">
+                            <span>Мое обучение</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../vacancies/vacancies.html">
+                            <img src="../../img/corp/icons/vacancies.png" alt="icon" class="icon-li">
+                            <span>Вакансии</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../payment-rent.html">
+                            <img src="../../img/icon/money.png" alt="icon" class="icon-li">
+                            <span>Оплата</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../faq.html">
+                            <img src="../../img/icon/info.png" alt="icon" class="icon-li">
+                            <span>Помощь</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../profile/data.html">
+                            <img src="../../img/icon/user.png" alt="icon" class="icon-li">
+                            <span>Профиль</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../communication/students.html">
+                            <img src="../../img/corp/icons/discussion.png" alt="icon" class="icon-li">
+                            <span>Общение</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main id="main">
+
+            <!-- Top Buttons Container Start -->
+            <div class="top-buttons-wrappper flex f-w">
+                <a href="general.html" class="a-btn box-shadow">
+                    Общие
+                </a>
+                <a href="region.html" class="a-btn box-shadow">
+                    Регион
+                </a>
+                <a href="tests.html" class="a-btn box-shadow">
+                    Тесты
+                </a>
+                <a href="courses.html" class="a-btn box-shadow">
+                    Курсы
+                </a>
+                <a href="staff.html" class="a-btn box-shadow">
+                    Сотрудники
+                </a>
+                <a href="./data-constructor.html" class="a-btn blue-gradient-background box-shadow">
+                    Конструктор данных
+                </a>
+            </div>
+            <!--  Top Buttons Container End  -->
+
+            <!--  Filters start  -->
+            <form action="#">
+                <div class="filters-wrapper flex f-w test-members-designate-sort">
+                    <div class="constructor-data">
+                        <div class="filter-row">
+                            <div class="filter-label">
+                                Период
+                            </div>
+                            <div class="filter-value">
+                                <div class="filter multiple-select custom-select-filter custom-filter-date-picker">
+                                    <select>
+                                        <option value="1">Сегодня</option>
+                                        <option value="2">Последние 7 дней</option>
+                                        <option value="3">Последние 30 дней</option>
+                                        <option value="4">Последние 90 дней</option>
+                                        <option value="4">Произвольный выбор</option>
+                                    </select>
+                                    <input type="text" class="date-filter" value="08-05-2020 - 08-05-2020">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-row select-for-type">
+                            <div class="filter-label">
+                                Тип отчета
+                            </div>
+                            <div class="filter-value">
+                                <div class="filter multiple-select custom-select-filter">
+                                    <select>
+                                        <option class="all-data" value="1">Сводные данные</option>
+                                        <option class="data-for-course" value="2">Данные по курсу</option>
+                                        <option class="data-for-test" value="3">Данные по тесту</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-row select-for-course">
+                            <div class="filter-label">
+                                Курс
+                            </div>
+                            <div class="filter-value">
+                                <div class="filter multiple-select custom-select-filter">
+                                    <select multiple>
+                                        <option value="1">Курс 1</option>
+                                        <option value="2">Курс 2</option>
+                                        <option value="3">Курс 3</option>
+                                        <option value="4">Курс 4</option>
+                                        <option value="5">Курс 5</option>
+                                        <option value="6">Курс 6</option>
+                                        <option value="7">Курс 7</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-row select-for-test">
+                            <div class="filter-label">
+                                Тест
+                            </div>
+                            <div class="filter-value">
+                                <div class="filter multiple-select custom-select-filter">
+                                    <select multiple>
+                                        <option value="1">Тест 1</option>
+                                        <option value="2">Тест 2</option>
+                                        <option value="3">Тест 3</option>
+                                        <option value="4">Тест 4</option>
+                                        <option value="5">Тест 5</option>
+                                        <option value="6">Тест 6</option>
+                                        <option value="7">Тест 7</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-row select-for-department">
+                            <div class="filter-label">
+                                Подразделение
+                            </div>
+                            <div class="filter-value">
+                                <div class="filter multiple-select custom-select-filter">
+                                    <select multiple>
+                                        <option value="1">Подразделение 1</option>
+                                        <option value="2">Подразделение 2</option>
+                                        <option value="3">Подразделение 3</option>
+                                        <option value="4">Подразделение 4</option>
+                                        <option value="5">Подразделение 5</option>
+                                        <option value="6">Подразделение 6</option>
+                                        <option value="7">Подразделение 7</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-row select-for-position">
+                            <div class="filter-label">
+                                Должность
+                            </div>
+                            <div class="filter-value">
+                                <div class="filter multiple-select custom-select-filter">
+                                    <select multiple>
+                                        <option value="1">Должность 1</option>
+                                        <option value="2">Должность 2</option>
+                                        <option value="3">Должность 3</option>
+                                        <option value="4">Должность 4</option>
+                                        <option value="5">Должность 5</option>
+                                        <option value="6">Должность 6</option>
+                                        <option value="7">Должность 7</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-submit-cont">
+                            <input type="submit" class="btn btn-submit" value="Сформировать отчет">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!--  Filters end  -->
+        </main>
+    </div>
+
+    <script src="../../script/libs/jquery.custom-select.js"></script>
+    <script src="../../script/libs/select2.min.js"></script>
+    <script src="../../script/inner.js"></script>
+    <script src="../../script/resp-menu.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="../../script/common.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(function () {
+                $('.date-filter').on('change paste keyup', function () {
+                    $('.custom-filter-date-picker').find('.select2-selection__rendered').html($(this).val());
+                });
+                $('.date-filter').daterangepicker({
+                    opens: 'rigth',
+                    locale: {
+                        format: 'DD-MM-YYYY',
+                        applyLabel: 'Принять',
+                        cancelLabel: 'Отмена',
+                        invalidDateLabel: 'Выберите дату',
+                        daysOfWeek: ['Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс', 'Пн'],
+                        monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                        firstDay: 1
+                    }
+                }, function (start, end, label) {
+                });
+            });
+        });
+    </script>
+    <script>
+        jQuery(function ($) {
+            $(document).ready(function () {
+                $('.select-search select').customSelect({
+                    search: true
+                });
+                $('.multiple-select select').select2({
+                    width: 'style',
+                    minimumResultsForSearch: Infinity,
+                    language: {
+                        noResults: function (params) {
+                            return "Данные не найдены";
+                        }
+                    }
+                });
+                $('.custom-filter-date-picker').change(function(e){
+                    var $value = $(this).find('option:selected');
+                    if ($value.text() == 'Произвольный выбор') {
+                        $('.custom-filter-date-picker .date-filter').click();
+                    }
+                });
+                $('.select-for-type').on('change', 'select', function(e){
+                    var $option = $(this).find('option:selected');
+                    if($option.hasClass('data-for-course')){
+                        $('.select-for-test').fadeOut(0);
+                        console.log($('.select-for-test select'));
+                        $('.select-for-test select').val([]);
+                        $('.select-for-test').find('.select2-selection__rendered').html('');
+                        // $('.select-for-test select').children().remove().end();
+                    }
+                    else {
+                        $('.select-for-test').fadeIn(0);
+                    }
+                })
+                // if pick course
+                // $('.select-for-course').on('change', 'select', function(e){
+                //     let courseOption = $(this).val().toString();
+                //     let courseId = courseOption.split('_')[1];
+                //     if(courseId){
+                //         $.ajax ({
+                //             type: 'POST',
+                //             url: "/ajax/get-course-lessons",
+                //             processData: false,
+                //             contentType: false,
+                //             dataType: "json",
+                //             data: {
+                //                 courseId: courseId 
+                //             }
+                //         }).done(function (data) {
+                //             console.log(data);
+                //             console.log('Курс выбран');
+                //         }).fail(function (data) {
+                //             // не удалось выполнить запрос к серверу
+                //             console.log(data);
+                //             console.log('Запрос не принят');
+                //         });
+                //     }
+                // });
+            });
+        });
+    </script>
+</body>
+
+</html>

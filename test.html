@@ -1,0 +1,116 @@
+<script>
+    jQuery(function ($) {
+        $(document).ready(function () {
+            //if choose single test
+            $('.check-single-wrapper').on('change', 'input[type=checkbox]', function (e) {
+                if ($(this).is(':checked')) {
+                    $('.title-select').html('Отдельный тест');
+                    $('.options-for-single').fadeIn(300);
+                    $('.options-for-course-test').fadeOut(0);
+                    $('.hide-for-course').fadeIn(300);
+                    $('.hide-for-single-test').fadeOut(0);
+                } else {
+                    $('.title-select').html('Тест к курсу');
+                    $('.options-for-single').fadeOut(0);
+                    $('.options-for-course-test').fadeIn(300);
+                    $('.hide-for-course').fadeOut(0);
+                    $('.hide-for-single-test').fadeIn(300);
+                }
+            });
+            // if choose course
+            $('.select-for-course').on('change', 'select', function (e) {
+                let courseOption = $(this).val().toString();
+                let courseId = parseInt(courseOption);
+                let courseName = $(this).find('option[value=' + courseOption + ']').html();
+                $('.title-select').html('Тест к курсу ' + courseName);
+                if (courseId) {
+                    var thisEl = this;
+                    $.ajax({
+                        type: 'POST',
+                        url: "/corporate/ajax/get-course-lessons",
+                        dataType: "json",
+                        data: {
+                            course_id: courseId
+                        }
+                    }).done(function (data) {
+                        if (!Object.entries)
+                            Object.entries = function (obj) {
+                                var ownProps = Object.keys(obj),
+                                    i = ownProps.length,
+                                    resArray = new Array(i); // preallocate the Array
+                                while (i--)
+                                    resArray[i] = [ownProps[i], obj[ownProps[i]]];
+
+                                return resArray;
+                            };
+                        let valuesArray = Object.entries(data);
+                        if ($(thisEl).parents('.design-content__row').next('.select-lesson-wrapper').length > 0) {
+                            $(thisEl).parents('.design-content__row').next('.select-lesson-wrapper').remove();
+                        }
+                        if (valuesArray.length > 0) {
+                            let selectHtml =
+                                '<div class="design-content__row min-res-wrap select-lesson-wrapper">Выбрать урок'
+                                + '    <div class="select-for-lessons">'
+                                + '    <select class="form-control" name="TestData[lesson_id]">'
+                                + '      <option value="">Выбрать урок</option>';
+                            for (let i = 0; i < valuesArray.length; i++) {
+                                console.log(valuesArray[i]);
+                                selectHtml += '<option value=" ' + valuesArray[i][0] + '">' + valuesArray[i][1] + '</option>';
+                            }
+                            // for (let value of valuesArray) {
+                            //     selectHtml += '<option value=" ' + value[0] + '">' + value[1] + '</option>';
+                            // }
+                            selectHtml +=
+                                '   </select>'
+                                + '  </div>'
+                                + '</div>';
+                            $(selectHtml).insertAfter($(thisEl).parents('.design-content__row'));
+                            $('.ui-ux_design-content select').customSelect();
+                        }
+
+                        console.log('Курс выбран');
+                    }).fail(function (data) {
+                        // не удалось выполнить запрос к серверу
+                        console.log(data);
+                        console.log('Запрос не принят');
+                    });
+                }
+            });
+            $('.design').on('change', '.select-lesson-wrapper select', function (e) {
+                let lessonOption = $(this).val().toString();
+                if (lessonOption) {
+                    let lessonName = $(this).find('option[value=' + lessonOption + ']').html();
+                    $('.title-select').html('Тест к уроку ' + lessonName);
+                } else {
+                    let courseOption = $('.select-for-course select').val()
+                    let courseName = $('.select-for-course').find('option[value=' + courseOption + ']').html();
+                    $('.title-select').html('Тест к курсу ' + courseName);
+                }
+            });
+            $('.select-courses select').customSelect({
+                placeholder: '<span>Выберите урок/курс</span>',
+            });
+            $('.select-for-course select').customSelect({
+                placeholder: '<span>Выберите курс</span>',
+            });
+            $('.ui-ux_design-content select').customSelect();
+
+            $('#webinar-length input').timepicker({
+                'step': 5,
+                'showDuration': true,
+                'timeFormat': 'H:i:s'
+            });
+
+            $('.js-example-basic-multiple').select2({
+                width: 'style'
+            });
+        });
+        $('#checkbox01').change(function () {
+            if ($(this).is(':checked')) {
+                $('.select-courses').show();
+            } else {
+                $('.select-courses').hide();
+            }
+        });
+    });
+</script>

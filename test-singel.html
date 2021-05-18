@@ -1,0 +1,630 @@
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Курс-обучение</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style/libs/test-select.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/roman.css">
+    <link rel="stylesheet" href="style/i-style/style.css">
+    <link rel="stylesheet" href="style/media.css">
+
+    <!-- Styles -->
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+
+</head>
+
+<body>
+    <div class="test-result-overlay refreshing-page" style="display: flex;">
+        <div class="test-result-popup">
+            <div class="close">
+                +</div>
+            <div class="result-information">
+                <p >Тест не пройден!</p>
+                <p>Ваш результат теста - <span class="evaluation">0</span> б,</p>
+                <p>из <span class="max-evaluation">20</span> б,</p>
+                <p>что составляет
+                    <span class="percent">0</span>%
+                </p>
+                <p class="min-result-cont">Минимальный результат для прохождения:
+                    <span class="min-percent">80</span> %</p>
+            </div>
+
+            <div class="chare-buttons-wrapper">
+                <p class="share-buttons-title">Поделиться результатами </p>
+                <div class="share-buttons">
+                    <!--<p class="share_social bold">Поделиться вакансией</p>-->
+                    <a class="share-btn-vk" href="https://vk.com/share.php?url=[LINK]" target="_blank"
+                        onclick="return Share.me(this);">
+                        <div class="vk share-block">
+                            <img class="soc-icon-size" src="img/social_icon/vk.png" alt="instagram">
+                        </div>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Ffiddle.jshell.net%2F_display%2F&text=https://www.ukr.net/"
+                        target="_blank" onclick="return Share.me(this)">
+                        <div class="twitter share-block">
+                            <img class="soc-icon-size" src="img/social_icon/twitter.png" alt="instagram">
+                        </div>
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank"
+                        onclick="return Share.me(this);">
+                        <div class="google share-block">
+                            <img class="soc-icon-size" src="img/social_icon/facebook.png" alt="instagram">
+                        </div>
+                    </a>
+                    <a href="tg://msg_url?url=https://www.google.com.mx/">
+                        <div class="telegram share-block">
+                            <img class="soc-icon-size" src="img/social_icon/telegram.png" alt="telegram">
+                        </div>
+                    </a>
+                    <a class="share-btn-in" href="viber://forward?text=<Your Text>">
+                        <!--<a href="viber://pa?chatURI=[public account URI]&text=[message text]" target="_blank" onclick="return Share.me(this);">-->
+                        <!--<a href="viber://pa?chatURI=http://www.example.com">-->
+                        <div class="viber share-block">
+                            <img class="soc-icon-size" src="img/social_icon/viber.png" alt="viber">
+                        </div>
+                    </a>
+                    <!--<a href="whatsapp://send?text={url}">-->
+
+                    <a href="whatsapp://send?text=https://www.google.com.mx/" data-action="share/whatsapp/share">
+                        <div class="whatsapp share-block">
+                            <img class="soc-icon-size" src="img/social_icon/whatsapp.png" alt="instagram">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="test-passed-overlay">
+        <div class="test-result-popup">
+            <div class="result-information">
+                <p>Вы уже проходили это тестирование</p>
+                <p>Ваш результат теста - <span class="evaluation">0</span> б,</p>
+                <p>из <span class="max-evaluation">20</span> б,</p>
+                <div class="btn-wrapper">
+                    <button class="main-test_btn extra next-question test_request" data-test="826">Запросить
+                        дополнительную попытку теста
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="papa">
+        <header id="header">
+            <div class="logo">
+                <a href="courses.html"><img src="img/logo.png" alt=""></a>
+                <div id="menu-3-lines" class="menu-absolute">
+                    <div class="line top-line"></div>
+                    <div class="line mid-line"></div>
+                    <div class="line bot-line"></div>
+                </div>
+            </div>
+            <div class="right-block flex a-c">
+                <nav class="header-navigation" id="left-menu">
+                    <ul class="menu">
+                        <li><a class="active-menu menu-item" href="">Обучение</a></li>
+                        <li><a class="menu-item" href="">Консалтинг</a></li>
+                        <li><a class="menu-item" href="">О нас</a></li>
+                        <li><a class="menu-item" href="">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div id="header-bell" class="bell p-r">
+                    <div class="bell-notifications">3</div>
+                    <a href="notifications.html"><i class="bell-img i-bell"></i></a>
+                </div>
+            </div>
+        </header>
+        <aside id="left-side-bar">
+            <div id="mobile-menu">
+            </div>
+            <div class="top-pearson-info flex j-c a-c f-d-c m-a mt-40">
+                <div class="pearson-photo">
+                    <img src="img/pearson/cover.jpg" alt="">
+                </div>
+                <div class="pearson-name">
+                    Варфоломей Книжный
+                </div>
+            </div>
+            <nav id="pearson-nav">
+                <ul>
+                    <li>
+                        <a href="courses.html">
+                            <img src="img/icon/book.png" alt="icon" class="icon-li">
+                            <span class="active-menu">Мое обучение</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pending-peyment.html">
+                            <img src="img/icon/money.png" alt="icon" class="icon-li">
+                            <span>Оплата</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="faq.html">
+                            <img src="img/icon/info.png" alt="icon" class="icon-li">
+                            <span>Помощь</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html">
+                            <img src="img/icon/user.png" alt="icon" class="icon-li">
+                            <span>Профиль</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main id="main">
+            <section class="lesson-home_work single-test-wrapper">
+                <div class="test-to-course">
+
+                    <div class="lesson-test lesson-course-cont">
+                        <div class="test-main-title test-main-title-course">
+
+                            <h2 class="">Тест свободный новий</h2>
+
+                            <h3 class="lesson-info-do-test " style="display: none;">ПРОЙТИ ТЕСТ</h3>
+                            <h5 style="">
+                                Попытка <span class="current-try">2</span> из <span class="all-try">5</span></h5>
+
+                            <div class="main-test_btn-wrapper hide-btn">
+                                <button class="main-test_btn extra next-question test_request" data-test="826">Запросить
+                                    дополнительную попытку теста
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <!--$testData-->
+                        <section class="main-test lesson-test-cont">
+                            <div class="lesson-timer" data-timer="0:20:00">Осталось времени: 0:17:11</div>
+                            <div class="main-test_container">
+
+                                <form id="w0" action="/single-test/index" method="post">
+                                    <input type="hidden" name="_csrf-frontend"
+                                        value="dEGRl4fyDYQZptmtWBfinksMQKI3Dw_6VTcXS6TTOJoVKcfw4oJr8VfL4cQoL5DbZj0E7H1qOKUycSMA0qBSqA==">
+                                    <input type="hidden" name="test_id" value="826">
+                                    <input type="hidden" name="course_id" value="">
+
+                                    <div class="main-test_questions-wrapper" style="">
+
+                                        <h3 class="main-test_title">Тест свободный новий</h3>
+                                        <div class="main-test_question-block">
+                                            <div class="main-test_question-wrapper">
+                                                <p class="main-test_question-text">
+                                                    Введите ваше имя
+                                                </p>
+                                                <div class="contact-answer">
+                                                    <input type="text" name="name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="main-test_question-block">
+                                            <div class="main-test_question-wrapper">
+                                                <p class="main-test_question-text">
+                                                    Введите ваш email
+                                                </p>
+                                                <div class="contact-answer">
+                                                    <input type="email" name="email">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="main-test_question-block">
+                                            <p class="chapter">Раздел 1 "Второй раздел теста"
+                                            </p>
+
+
+                                            <!-- one selection question -->
+                                            <div class="main-test_question-block">
+                                                <div class="main-test_question-wrapper">
+
+                                                    <!-- if text -->
+                                                    <div class="main-test_question-text">
+                                                        <div class="question-image-row">
+                                                            <div class="number-col">
+                                                                <span class="main-test_question-big-number">1</span>/1
+                                                            </div>
+                                                            <div class="image-col">
+                                                                <img src="/img/test_items/questions/UnknownuD3j5x.jpeg"
+                                                                    alt="Question">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- endif -->
+
+                                                    <p class="main-test_question-description"></p>
+                                                    <label class="radio_container">
+                                                        <input type="radio" name="optradio_962_1782_1" value="1"
+                                                            class="radio__option">
+                                                        <span class="answer">
+                                                            <div class="img-answer"
+                                                                style="background-image: url(/img/test_items/original/Unknown-1CG7KC4.jpeg);">
+                                                            </div>
+                                                        </span>
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                    <label class="radio_container">
+                                                        <input type="radio" name="optradio_962_1782_1" value="2"
+                                                            class="radio__option">
+                                                        <span class="answer">
+                                                            <div class="img-answer"
+                                                                style="background-image: url(/img/test_items/original/Unknown-2uNEJgz.jpeg);">
+                                                            </div>
+                                                        </span>
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                    <label class="radio_container">
+                                                        <input type="radio" name="optradio_962_1782_1" value="3"
+                                                            class="radio__option">
+                                                        <span class="answer">
+                                                            <div class="img-answer"
+                                                                style="background-image: url(/img/test_items/original/Unknown-3yStjkh.jpeg);">
+                                                            </div>
+                                                        </span>
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+
+                                            <!-- one selection question -->
+                                            <div class="main-test_question-block">
+                                                <div class="main-test_question-wrapper">
+
+                                                    <!-- if text -->
+                                                    <p class="main-test_question-text">
+                                                        <span class="main-test_question-big-number">1</span>/2 <span
+                                                            class="pl-20">вопрос 1 - 1</span>
+                                                    </p>
+                                                    <!-- else if image -->
+                                                    <!-- endif -->
+
+                                                    <p class="main-test_question-description"></p>
+                                                    <label class="radio_container">
+                                                        <input type="radio" name="optradio_962_1783_1" value="1"
+                                                            class="radio__option">
+                                                        <span class="answer">1</span>
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                    <label class="radio_container">
+                                                        <input type="radio" name="optradio_962_1783_1" value="2"
+                                                            class="radio__option">
+                                                        <span class="answer">2</span>
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                        </div>
+                                        <div class="main-test_question-block">
+                                            <p class="chapter">Раздел 2 "первый раздел теста new"
+                                            </p>
+
+
+                                            <!-- one selection question -->
+                                            <div class="main-test_question-block">
+                                                <div class="main-test_question-wrapper">
+
+                                                    <!-- if text -->
+                                                    <p class="main-test_question-text">
+                                                        <span class="main-test_question-big-number">2</span>/1 <span
+                                                            class="pl-20">вопрос 1 - 1</span>
+                                                    </p>
+                                                    <!-- else if image -->
+                                                    <!-- endif -->
+
+                                                    <p class="main-test_question-description"></p>
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+
+                                            <!-- one selection question -->
+                                            <div class="main-test_question-block">
+                                                <div class="main-test_question-wrapper">
+
+                                                    <!-- if text -->
+                                                    <p class="main-test_question-text">
+                                                        <span class="main-test_question-big-number">2</span>/2 <span
+                                                            class="pl-20">вопрос 1 - 1</span>
+                                                    </p>
+                                                    <!-- else if image -->
+                                                    <!-- endif -->
+
+                                                    <p class="main-test_question-description"></p>
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+
+                                            <!-- one selection question -->
+                                            <div class="main-test_question-block">
+                                                <div class="main-test_question-wrapper">
+
+                                                    <!-- if text -->
+                                                    <p class="main-test_question-text">
+                                                        <span class="main-test_question-big-number">2</span>/3 <span
+                                                            class="pl-20">перввый вопрос теста new )) </span>
+                                                    </p>
+                                                    <!-- else if image -->
+                                                    <!-- endif -->
+
+                                                    <p class="main-test_question-description"></p>
+                                                    <label class="radio_container">
+                                                        <input type="radio" name="optradio_957_1781_1" value="1"
+                                                            class="radio__option">
+                                                        <span class="answer">ответ 1 )) </span>
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                    <label class="radio_container">
+                                                        <input type="radio" name="optradio_957_1781_1" value="2"
+                                                            class="radio__option">
+                                                        <span class="answer">ответ 2</span>
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                    <label class="radio_container">
+                                                        <input type="radio" name="optradio_957_1781_1" value="3"
+                                                            class="radio__option">
+                                                        <span class="answer">ответ 3</span>
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                        </div>
+
+                                        <div class="main-test_btn-wrapper">
+                                            <button class="main-test_btn next-question">Далее</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script/libs/timer.js"></script>
+    <script src="script/libs/timer-lesson.js"></script>
+    <script src="script/do-test.js"></script>
+    <script src="script/confirm.js"></script>
+    <script src="script/inner.js"></script>
+    <script src="script/resp-menu.js"></script>
+    <script src="script/libs/upload.js"></script>
+    <script src="script/testCustomSelect.js"></script>
+    <script src="script/validBigRadio.js"></script>
+    <script src="script/share-popup.js"></script>
+    <script src="script/courseTeachingAttachedFileValidation.js"></script>
+    <script>
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // get .player nodes
+        var playerDivs = document.querySelectorAll(".lesson-video");
+
+        // nodelist to array to use forEach();
+        var playerDivsArr = [].slice.call(playerDivs);
+
+        var players = new Array(playerDivsArr.length);
+        var waypoints = new Array(playerDivsArr.length);
+
+        // when youtube stuff is ready
+        function onYouTubeIframeAPIReady() {
+            // create yt players
+            playerDivsArr.forEach(function (e, i) { // forEach ...
+                let videoId = youtube_parser($('#' + e.id).attr('data-video'));
+                let lessonId = $('#' + e.id).attr('data-lesson');
+                let videoCont = $('#' + e.id).parents('.video-block');
+                // console.log(lessonId);
+                players[i] = new YT.Player(e.id, {
+                    height: '520',
+                    width: '760',
+                    videoId: videoId,
+                    events: {
+                        'onStateChange': onPlayerStateChange,
+                    }
+                })
+                function onPlayerStateChange(event) {
+                    if (event.data == 1) {
+                        if (!videoCont.attr('data-time')) {
+                            videoCont.attr('data-time', new Date().getTime() / 1000);
+                        }
+                    }
+                    if (event.data == 0) {
+                        let currentTime = new Date().getTime() / 1000 - parseInt(videoCont.attr('data-time'));
+                        let duration = players[i].getDuration();
+                        console.log('currentTime: ' + currentTime);
+                        console.log('duration: ' + duration);
+                        if (currentTime > duration * 0.9) {
+                            videoCont.find('.video-seen').val('true');
+                            checkPassedLesson(videoCont.parents('.contents_paragraphs_item'));
+                            $.ajax({
+                                type: 'POST',
+                                url: "/corporate/ajax/create-test-item",
+                                dataType: "json",
+                                data: {
+                                    lesson_id: lessonId,
+                                    reason: 'youtube',
+                                },
+                            }).done(function (data) {
+                                console.log(data);
+                                console.log('Видео просмотрено');
+                            }).fail(function (data) {
+                                // не удалось выполнить запрос к серверу
+                                console.log(data);
+                                console.log('Запрос не принят');
+                            });
+                        }
+                    }
+                }
+            })
+
+            // create waypoints
+            $(".player").each(function (i, e) {
+                waypoints[i] = new Waypoint({
+                    element: e,
+                    handler: function () {
+                        players[i].playVideo();
+                    }
+                })
+            });
+
+        }
+        function youtube_parser(url) {
+            var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+            var match = url.match(regExp);
+            return (match && match[7].length == 11) ? match[7] : false;
+        }
+        function checkPassedLesson(el) {
+            console.log("checkPassedLesson");
+            console.log(el);
+            let videos = el.find('.video-seen');
+            let materials = el.find('.materials-seen');
+            let homework = el.find('.homework-seen');
+            let test = el.find('.test-seen');
+
+            let videoSeen = true;
+            let HWSeen = true;
+            let materialsSeen = true;
+            let testSeen = true;
+            for (let index = 0; index < videos.length; index++) {
+                if ($(videos[index]).val() != 'true') {
+                    videoSeen = false;
+                }
+
+            }
+            for (let index = 0; index < materials.length; index++) {
+                if ($(materials[index]).val() != 'true') {
+                    materialsSeen = false;
+                }
+
+            }
+            if (homework.length > 0) {
+                if (homework.val() == 'false') {
+                    HWSeen = false;
+                }
+            }
+            if (test.length > 0) {
+                if (test.val() == 'false') {
+                    test = false;
+                }
+            }
+            if (test && HWSeen && materialsSeen && videoSeen) {
+                openNextLesson(el);
+                let passedLesson = parseInt($('.progress-count').find('.count-passed-lesson').html());
+                let allLesson = parseInt($('.progress-count').find('.count-all-lesson').html());
+                if (passedLesson < allLesson) {
+                    passedLesson = passedLesson + 1;
+                    let width = 100 * (passedLesson / allLesson) + '%';
+                    $('.progress-count').find('.count-passed-lesson').html(passedLesson);
+                    $('.progress-wrapper').find('.blue-gradient-bg').css('width', width);
+                }
+            }
+        }
+        function openNextLesson(el) {
+            $(el).removeClass('not-passed');
+            if ($(el).next('.contents_paragraphs_item').length > 0) {
+                $(el).next('.contents_paragraphs_item').removeClass('passive-questions');
+                checkPassedLesson($(el).next('.contents_paragraphs_item'));
+            }
+            else {
+                $(el).parents('.paragraph-wrapp').removeClass('not-passed');
+                if ($(el).parents('.paragraph-wrapp').next('.paragraph-wrapp').length > 0) {
+                    $(el).parents('.paragraph-wrapp').next('.paragraph-wrapp').find('.paragraph-point').removeClass('locked ');
+                    $(el).parents('.paragraph-wrapp').next('.paragraph-wrapp').find('.spoiler').removeClass('hide');
+                    $(el).parents('.paragraph-wrapp').next('.paragraph-wrapp').find('.contents_paragraphs_item:nth-child(1)').removeClass('passive-questions ');
+                    checkPassedLesson($(el).parents('.paragraph-wrapp').next('.paragraph-wrapp').find('.contents_paragraphs_item:nth-child(1)'));
+                }
+                else if ($('.test-to-course').length > 0) {
+                    $('.test-to-course').fadeIn(300);
+                    $('.test-to-course').removeClass('hidden');
+                }
+                else if ($('.cursova-to-course').length > 0) {
+                    $('.cursova-to-course').fadeIn(300);
+                    $('.cursova-to-course').removeClass('hidden');
+                }
+            }
+        }
+        $('.lesson-home_work').on('click', '.materials-file', function (e) {
+            let materialId = $(this).attr('data-material');
+            if (materialId) {
+                $(this).find('.materials-seen').val('true');
+                $(this).addClass('downloaded');
+                checkPassedLesson($(this).parents('.contents_paragraphs_item'));
+                console.log('material_id: ' + materialId);
+                $.ajax({
+                    type: 'POST',
+                    url: "/ajax/download-material",
+                    dataType: "json",
+                    data: {
+                        material_id: materialId
+                    },
+                }).done(function (data) {
+                    console.log(data);
+                    console.log('Материал скачанный');
+                }).fail(function (data) {
+                    // не удалось выполнить запрос к серверу
+                    console.log(data);
+                    console.log('Запрос не принят');
+                });
+            }
+        });
+
+    </script>
+    <script>
+        $('.range-test').change(function () {
+            $(this).parents('.min_res-wrap').find('.min_res-output').html($(this).val());
+        });
+        $('.lesson-home_work-description').on('click', '.do-homework', function () {
+            $(this).hide();
+            $(this).parents('.lesson-home_work-description').find('.homework-block').addClass('showed');
+            $(this).parents('.lesson-home_work-description').find('.homework-block').removeClass('hidden');
+            $(this).parents('.lesson-home_work-description').find('.upload_file_main-container').addClass('showed');
+            $(this).parents('.lesson-home_work-description').find('.upload_file_main-container').removeClass('hidden');
+        });
+    </script>
+    <script type="text/javascript">
+        var messageBox = $('.messages-wrapper');
+        messageBox.scrollTop(messageBox.prop('scrollHeight'));
+    </script>
+    <script>
+        window.addEventListener("beforeunload", function (e) {
+            saveFormData();
+
+            (e || window.event).returnValue = null;
+            return null;
+        });
+    </script>
+</body>
+
+</html>
