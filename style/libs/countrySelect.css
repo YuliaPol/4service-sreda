@@ -1,9 +1,14 @@
 /*the container must be positioned relative:*/
 .country-select-wrapper {
     position: relative;
-    width: 140px;
+    min-width: 140px;
     background-color: rgba(255,255,255,0.5);
-    height: 40px;
+    min-height: 40px;
+    max-width: 100%;
+}
+.country-select-wrapper .selected-country {
+    white-space: normal;
+    line-height: 22px;
 }
 .country-select-wrapper select {
     display: none; /*hide original SELECT element:*/

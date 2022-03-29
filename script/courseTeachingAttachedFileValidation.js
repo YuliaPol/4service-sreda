@@ -4,6 +4,8 @@ $('.attachedFile').submit(function(e){
 	var fileForm = $(this).find('.inputfile').length;
 	var fileFormVal = 0;
 	var feedback_needs = $(this).find('.send-btn').attr('data-homework');
+	var lessonId = $(this).find('input[name=lesson_id]').val();
+	var needFeedback = $('#need_feedback_' + lessonId).val();
 	if(fileForm > 0) {
 		fileFormVal = $(this).find('.inputfile').val();
 	}
@@ -53,11 +55,14 @@ $('.attachedFile').submit(function(e){
 			blockShow.find('.add-info:nth-child(1)').html(" ");
 		}
 		blockShow.css('display','flex');
+
 		if(!$(form).hasClass('send')){
 			$(form).addClass('send');
 			var formData = new FormData(this);
-			$(this).parents('.lesson-home_work').find('.homework-seen').val('true');
-			checkPassedLesson($(this).parents('.contents_paragraphs_item'));
+			if(needFeedback!=1){
+				$(this).parents('.lesson-home_work').find('.homework-seen').val('true');
+				checkPassedLesson($(this).parents('.contents_paragraphs_item'));
+			}
 			$.ajax ({
 				type:'POST', // Тип запроса
 				url: "/ajax/homework",

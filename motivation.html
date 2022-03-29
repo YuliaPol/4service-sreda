@@ -1,0 +1,199 @@
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Профиль</title>
+
+    <!-- Styles -->
+    <!--    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">-->
+    <!--    <script type="text/javascript" src="script/libs/SearchableMultiselect/mock.js"></script>-->
+
+    <!--    <link rel="stylesheet" type="text/css" href="script/libs/SearchableMultiselect/jquery.dropdown.css">-->
+    <!--    <script src="script/libs/SearchableMultiselect/jquery.dropdown.js"></script>-->
+    <link rel="stylesheet" href="style/libs/select2.min.css">
+    <link rel="stylesheet" href="style/roman.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/i-style/style.css">
+    <link rel="stylesheet" href="style/libs/countrySelect.css">
+    <link rel="stylesheet" href="style/libs/timeZoneSelect.css">
+    <link rel="stylesheet" href="style/media.css">
+    <!-- Styles -->
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+
+</head>
+
+<body>
+    <div id="background" class="bg-blue"></div>
+    <div id="papa">
+        <header id="header">
+            <div class="logo">
+                <a href="courses.html"><img src="img/logo.png" alt=""></a>
+                <div id="menu-3-lines" class="menu-absolute">
+                    <div class="line top-line"></div>
+                    <div class="line mid-line"></div>
+                    <div class="line bot-line"></div>
+                </div>
+            </div>
+            <div class="right-block flex a-c">
+                <nav class="header-navigation" id="left-menu">
+                    <ul class="menu">
+                        <li><a class="active-menu menu-item" href="">Обучение</a></li>
+                        <li><a class="menu-item" href="">Консалтинг</a></li>
+                        <li><a class="menu-item" href="">О нас</a></li>
+                        <li><a class="menu-item" href="">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div id="header-bell" class="bell p-r">
+                    <div class="bell-notifications">3</div>
+                    <a href="notifications.html"><i class="bell-img i-bell"></i></a>
+                </div>
+            </div>
+        </header>
+        <aside id="left-side-bar">
+            <div id="mobile-menu">
+            </div>
+            <div class="top-pearson-info flex j-c a-c f-d-c m-a mt-40">
+                <div class="pearson-photo">
+                    <img src="img/pearson/cover.jpg" alt="">
+                </div>
+                <div class="pearson-name">
+                    Варфоломей Книжный
+                </div>
+            </div>
+            <nav id="pearson-nav">
+                <ul>
+                    <li>
+                        <a href="courses.html">
+                            <img src="img/icon/book.png" alt="icon" class="icon-li">
+                            <span>Мое обучение</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pending-peyment.html">
+                            <img src="img/icon/money.png" alt="icon" class="icon-li">
+                            <span>Оплата</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="faq.html">
+                            <img src="img/icon/info.png" alt="icon" class="icon-li">
+                            <span>Помощь</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html">
+                            <img src="img/icon/user.png" alt="icon" class="icon-li">
+                            <span class="active-menu">Профиль</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main id="main">
+            <!-- Top Buttons Container Start -->
+            <div class="top-buttons-wrappper flex f-w">
+                <a href="profile.html" class="a-btn box-shadow blue-gradient-background">
+                    Данные
+                </a>
+                <a href="certifications.html" class="a-btn box-shadow">
+                    Сертификаты
+                </a>
+                <a href="employment.html" class="a-btn box-shadow">
+                    Трудоустройство
+                </a>
+                <a href="notifications.html" class="a-btn box-shadow">
+                    Уведомления
+                </a>
+            </div>
+            <!--  Top Buttons Container End  -->
+            <section class="profile-content">
+                <div class="profile-content-wrapper motivation-wrap">
+                    <div class="thanks-text">
+                        <p>
+                            Благодарим за участие в программе!
+                        </p>
+                        <p>
+                            В будущем на данной странице Вы сможете отслеживать прогресс начислений
+                        </p>
+                    </div>
+                </div>
+                <div class="profile-content-wrapper motivation-wrap">
+                    <form id="w0" action="/student/motivation" method="post">
+                        <input type="hidden" name="_csrf-frontend"
+                            value="uWWZlvdQbBAEj81eislSMKAYb8u7qIdCR-xfCAlv2y72OtrmrzwrZjzWoWvau2VC00Eu_vns5nYXn2xtTiiwSQ==">
+                        <div class="form-group">
+                            <div class="radio_container">
+                                <input type="checkbox" id="motivation-confirmation" name="confirmation" value="1" class="radio__option">
+                                <label for="motivation-confirmation" class="answer">
+                                    Принять участие в программе нематериальной мотивации «Спасибо»
+                                </label>
+                                <span class="checkmark"></span>
+                            </div>
+                        </div>
+                        <div class="save-decline-btns">
+                            <button type="submit" class="btn btn-primary form-btn" name="confirmation-button"
+                            value="send">Сохранить</button> 
+                            <button type="submit" class="btn btn-primary form-btn"
+                                name="confirmation-cancel" value="cancel">Отмена</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script>
+    // var Random = Mock.Random;
+    // var json1 = Mock.mock({
+    //     "data|10-50": [{
+    //         name: function () {
+    //             return Random.name(true)
+    //         },
+    //         "id|+1": 1,
+    //         "disabled|1-2": true,
+    //         groupName: 'Group Name',
+    //         "groupId|1-4": 1,
+    //         "selected": false
+    //     }]
+    // });
+
+    // $('.dropdown-mul-1').dropdown({
+    //     data: json1.data,
+    //     limitCount: 40,
+    //     multipleMode: 'label',
+    //     choice: function () {
+    //         // console.log(arguments,this);
+    //     }
+    // });
+    // $('.dropdown-sin-1').dropdown({
+    //     readOnly: true,
+    //     input: '<input type="text" maxLength="20" placeholder="Search">'
+    // });
+    // $('.dropdown-mul-1').dropdown({
+    //     limitCount: 40,
+    //     multipleMode: 'label',
+    //     choice: function () {
+    //         // console.log(arguments,this);
+    //     }
+    // });
+    </script>
+    <script src="script/libs/select2.min.js"></script>
+    <script src="script/inner.js"></script>
+    <script src="script/resp-menu.js"></script>
+    <script src="script/edit-data.js"></script>
+    <script src="script/libs/countrySelect.js"></script>
+    <script src="script/libs/timeZoneSelect.js"></script>
+    <script>
+        jQuery(function ($) {
+            $(document).ready(function () {
+
+
+                $('.js-example-basic-multiple').select2({
+                    width: 'style'
+                });
+            });
+        });
+    </script>
+</body>

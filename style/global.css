@@ -17,17 +17,28 @@ img {
 }
 
 .blue-gradient-background {
+  background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   background-image: -ms-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background: -webkit-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background: -o-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   background: linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   color: #ffffff;
 }
 
 .red-gradient-background {
+  background-image: -webkit-linear-gradient(-80deg, #f55555 0%, #fccf31 100%);
   background-image: -ms-linear-gradient(-80deg, #f55555 0%, #fccf31 100%);
+  background: -webkit-linear-gradient(170deg, #f55555 0%, #fccf31 100%);
+  background: -o-linear-gradient(170deg, #f55555 0%, #fccf31 100%);
+  background: linear-gradient(-80deg, #f55555 0%, #fccf31 100%);
 }
 
 .pink-gradient-background {
+  background-image: -webkit-linear-gradient(-80deg, #f2aac9 0%, #ffdfd3 100%);
   background-image: -ms-linear-gradient(-80deg, #f2aac9 0%, #ffdfd3 100%);
+  background: -webkit-linear-gradient(170deg, #f2aac9 0%, #ffdfd3 100%);
+  background: -o-linear-gradient(170deg, #f2aac9 0%, #ffdfd3 100%);
+  background: linear-gradient(-80deg, #f2aac9 0%, #ffdfd3 100%);
   color: #ffffff;
 }
 
@@ -77,11 +88,19 @@ img {
   display: block;
   outline: none;
   border: none;
+  background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   background-image: -ms-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background: -webkit-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background: -o-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background: linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
 }
 
 .active-btn {
+  background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   background-image: -ms-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background: -webkit-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background: -o-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background: linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   color: #ffffff !important;
 }
 
@@ -97,7 +116,11 @@ img {
   outline: none;
   border: none;
   margin: 0 auto;
+  background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   background-image: -ms-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background: -webkit-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background: -o-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background: linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   -webkit-box-shadow: 0px 10px 12px 3px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 10px 12px 3px rgba(0, 0, 0, 0.1);
 }
@@ -107,7 +130,7 @@ img {
   color: #cbcbcb;
   -webkit-box-shadow: 0px 10px 27px 3px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 10px 27px 3px rgba(0, 0, 0, 0.1);
-  background-image: none;
+  background: none;
   cursor: not-allowed;
 }
 
@@ -133,7 +156,11 @@ img {
   outline: none;
   border: none;
   margin: 0 auto;
+  background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   background-image: -ms-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background: -webkit-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background: -o-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background: linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   -webkit-box-shadow: 0px 10px 12px 3px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 10px 12px 3px rgba(0, 0, 0, 0.1);
 }
@@ -150,7 +177,11 @@ img {
   outline: none;
   border: none;
   margin: 0 auto;
+  background-image: -webkit-linear-gradient(-80deg, #f55555 0%, #fccf31 100%);
   background-image: -ms-linear-gradient(-80deg, #f55555 0%, #fccf31 100%);
+  background: -webkit-linear-gradient(170deg, #f55555 0%, #fccf31 100%);
+  background: -o-linear-gradient(170deg, #f55555 0%, #fccf31 100%);
+  background: linear-gradient(-80deg, #f55555 0%, #fccf31 100%);
 }
 
 .disable-red-btn {
@@ -204,6 +235,7 @@ img {
 
 .flex {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
@@ -273,6 +305,8 @@ input[type="search"] {
   line-height: 60px;
   font-size: 82px;
   -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+       -o-transform: rotate(45deg);
           transform: rotate(45deg);
   text-align: center;
   top: 20px;
@@ -310,6 +344,7 @@ input[type="search"] {
   position: absolute;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
   transition: opacity 0.3s;
   top: -60px;
   right: 30px;

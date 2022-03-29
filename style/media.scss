@@ -16,6 +16,12 @@
   body #papa main#main .project-description-wrapper .project-img .project_img_content{
     max-width: 313px;
   }
+  body #papa main#main .card-container .card .card-bottom .btn {
+    font-size: 12px;
+  }
+  .go-to-archive {
+    width: 30px;
+  }
 }
 @media (max-width: 1466px){
   body #papa main#main .design .design-container .ui-ux_design{
@@ -976,6 +982,32 @@
     height: 26px;
     left: -25px;
   }
+  .speaker-ratings .ratings-cont .ratings-row {
+    flex-direction: column;
+    padding-bottom: 20px;
+    .ratings-label {
+      width: 100%;
+      padding-bottom: 5px;
+      font-size: 14px;
+    }
+    .ratings-chart {
+      width: 100%;
+    }
+  }
+  .speaker-ratings .ratings-lesson {
+    padding-top: 25px;
+    .lesson-row  {
+      flex-direction: column;
+      .lesson-name {
+        padding-left: 0px;
+        width: 100%;
+        padding-bottom: 5px;
+      }
+      .lesson-progress {
+        width: 100%;
+      }
+    }
+  }
 }
 @media (max-width: 586px){
   body #papa main#main .video-registration .video-registration-wrapper .video-block iframe{
@@ -1157,10 +1189,6 @@
   body #papa main#main .main-test .main-test_container .main-test_questions-wrapper .main-test_question-block .main-test_question-wrapper .radio_container .answer,
   body #papa main#main .lesson-home_work .contents_paragraphs .paragraph-wrapp .spoiler-container .spoiler .contents_paragraphs_list .contents_paragraphs_item input[id^="spoiler"] ~ .sub-spoiler .lesson-home_work-description .lesson-home_work {
     font-size: 12px;
-  }
-  body #papa main#main .main-test .main-test_container {
-    padding-left: 0px;
-    padding-right: 0px;
   }
   body #papa main#main .lesson-home_work .contents_paragraphs .paragraph-wrapp .spoiler-container input[id^="spoiler"]:checked + label + .spoiler {
     padding-left: 5px;
@@ -1629,6 +1657,9 @@
 @media (max-width: 350px){
   body #papa main#main .filters-wrapper .filter.custom-select-filter{
     width: 90%;
+  }
+  body #papa main#main .card-container .card .card-bottom {
+    padding: 10px;
   }
 }
 @media (max-width: 369px){

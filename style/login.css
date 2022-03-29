@@ -217,8 +217,13 @@ body {
 .container-enter .body-enter .form-enter .form-group.form-input label {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
+}
+.container-enter .body-enter .form-enter  .help-block  {
+  padding-top: 10px;
+  font-size: 14px;
+  line-height: 16px;
 }
 .container-enter .body-enter .form-enter .form-group.form-input label .text-label {
   font-style: italic;

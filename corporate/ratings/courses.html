@@ -800,15 +800,15 @@
                 search: true
             });
             $('.custom-filter-date-picker.cust-select-wrap select').customSelect({
-                    placeholder: '<span>Период</span>',
-                    hideCallback: function () {
-                        var $value = $(this).find('[class$="value"]');
-                        if ($value.text() == 'Произвольный выбор') {
-                            console.log($value);
-                            $('.custom-filter-date-picker .date-filter').click();
-                        }
+                placeholder: '<span>Период</span>',
+                hideCallback: function () {
+                    var $value = $(this).find('[class$="value"]');
+                    if ($value.text() == 'Произвольный выбор') {
+                        console.log($value);
+                        $('.custom-filter-date-picker .date-filter').click();
                     }
-                });
+                }
+            });
             $('.cust-select-wrap select').customSelect(
                 {
                     hideCallback: function () {

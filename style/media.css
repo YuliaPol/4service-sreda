@@ -1,6 +1,7 @@
 @media (max-width: 1480px) {
   body #papa main#main .project-description-wrapper {
     -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
@@ -12,6 +13,12 @@
 @media (max-width: 1351px) {
   body #papa main#main .project-description-wrapper .project-img .project_img_content {
     max-width: 313px;
+  }
+  body #papa main#main .card-container .card .card-bottom .btn {
+    font-size: 12px;
+  }
+  .go-to-archive {
+    width: 30px;
   }
 }
 
@@ -53,36 +60,43 @@
 
 @media (max-width: 1269px) {
   body #papa main#main .video-registration .video-registration-wrapper {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
   }
   body #papa main#main .card-container .order1 {
     -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
         -ms-flex-order: 1;
             order: 1;
   }
   body #papa main#main .card-container .order2 {
     -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
         -ms-flex-order: 2;
             order: 2;
   }
   body #papa main#main .card-container .order3 {
     -webkit-box-ordinal-group: 4;
+    -webkit-order: 3;
         -ms-flex-order: 3;
             order: 3;
   }
   body #papa main#main .card-container .order4 {
     -webkit-box-ordinal-group: 5;
+    -webkit-order: 4;
         -ms-flex-order: 4;
             order: 4;
   }
   body #papa main#main .card-container .order5 {
     -webkit-box-ordinal-group: 6;
+    -webkit-order: 5;
         -ms-flex-order: 5;
             order: 5;
   }
   body #papa main#main .card-container .order6 {
     -webkit-box-ordinal-group: 7;
+    -webkit-order: 6;
         -ms-flex-order: 6;
             order: 6;
   }
@@ -91,12 +105,15 @@
   }
   body #papa main#main .mobile-title {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
+    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     padding: 10px 0;
@@ -123,8 +140,9 @@
 
 @media (max-width: 1255px) {
   body #papa main#main .design .design-container {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
   }
   body #papa main#main .design .design-container .status {
     margin-top: 20px;
@@ -145,10 +163,12 @@
 @media (max-width: 1160px) {
   body #papa main#main .lesson-home_work .contents_paragraphs .paragraph-wrapp .spoiler-container input[id^="spoiler"] + label {
     display: -webkit-box !important;
+    display: -webkit-flex !important;
     display: -ms-flexbox !important;
     display: flex !important;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -166,6 +186,7 @@
   body #papa main#main .profile-content .profile-content-wrapper .data-container .form-wrapp .question-block {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -193,9 +214,11 @@
 @media (max-width: 1357px) {
   body #papa main#main .feedback .feedback-container .owl-carousel .slide-cont-wrapp {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
+    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
@@ -204,13 +227,16 @@
 @media (max-width: 1146px) {
   body #papa main#main .lesson-home_work .contents_paragraphs .contents_paragraphs_list .contents_paragraphs_item {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
   }
 }
 
@@ -281,10 +307,12 @@
 @media (max-width: 1126px) {
   body #papa main#main .lesson-home_work .contents_paragraphs .point {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
   }
   body #papa main#main .lesson-home_work .contents_paragraphs .point .time-course-check-mark {
     float: none;
@@ -300,6 +328,7 @@
   .question-to-speaker_container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -316,12 +345,15 @@
   body #papa main#main .lesson-home_work .lesson-home_work-description .home-work-materials .upload_file_main-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-pack: center;
+    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
   }
@@ -426,6 +458,7 @@
   body #papa main#main .profile-content .profile-content-wrapper .data-container .form-wrapp .recommend-form .question-block {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -438,16 +471,20 @@
 @media (max-width: 1137px) {
   body #papa main#main .all_notifications .notification-box {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-pack: center;
+    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
   }
@@ -482,9 +519,11 @@
   .constructor-data .filter-row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-align: start;
+    -webkit-align-items: flex-start;
         -ms-flex-align: start;
             align-items: flex-start;
     padding-bottom: 20px;
@@ -492,6 +531,7 @@
   body #papa main#main .project-description-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -579,6 +619,7 @@
   body #papa main#main .all_notifications .notification-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -591,12 +632,15 @@
   body #papa main#main .discount .discount-item-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-pack: center;
+    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
   }
@@ -608,12 +652,16 @@
     top: 80px;
     left: -104px;
     -webkit-transform: rotate(91deg);
+        -ms-transform: rotate(91deg);
+         -o-transform: rotate(91deg);
             transform: rotate(91deg);
   }
   body #papa main#main .discount .discount-item-wrapper .discount-item .flag-line:after {
     top: 88px;
     margin-left: -6px;
     -webkit-transform: rotate(91deg);
+        -ms-transform: rotate(91deg);
+         -o-transform: rotate(91deg);
             transform: rotate(91deg);
   }
 }
@@ -705,6 +753,7 @@
   body #papa main#main .two-big-cards .big-card-container .big-card {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -759,6 +808,7 @@
 @media (max-width: 716px) {
   body #papa main#main .you-can-get .you-can-get_container {
     -webkit-box-pack: center;
+    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
@@ -768,6 +818,7 @@
   body #papa main#main .profile-content .profile-content-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -817,10 +868,12 @@
 @media (max-width: 640px) {
   body #papa main#main .lesson-home_work .contents_paragraphs .paragraph-wrapp .spoiler-container .spoiler .contents_paragraphs_list .contents_paragraphs_item input[id^="spoiler"] ~ .sub-spoiler .lesson-home_work-description .lesson-home_work .lesson-materials-title {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -959,7 +1012,8 @@
     left: -100px;
   }
   body #papa main#main .discount .discount-item-wrapper .discount-item .flag-line:after {
-    background-size: contain;
+    -webkit-background-size: contain;
+            background-size: contain;
     background-repeat: no-repeat;
     height: 26px;
     width: 180px;
@@ -1029,8 +1083,9 @@
     margin: 0 auto;
   }
   body #papa main#main .speaker .speaker-items-wrapper {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
   }
   body #papa main#main .speaker .speaker-items-wrapper .speaker-avatar {
     margin: 0 auto;
@@ -1059,6 +1114,40 @@
     height: 26px;
     left: -25px;
   }
+  .speaker-ratings .ratings-cont .ratings-row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-bottom: 20px;
+  }
+  .speaker-ratings .ratings-cont .ratings-row .ratings-label {
+    width: 100%;
+    padding-bottom: 5px;
+    font-size: 14px;
+  }
+  .speaker-ratings .ratings-cont .ratings-row .ratings-chart {
+    width: 100%;
+  }
+  .speaker-ratings .ratings-lesson {
+    padding-top: 25px;
+  }
+  .speaker-ratings .ratings-lesson .lesson-row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .speaker-ratings .ratings-lesson .lesson-row .lesson-name {
+    padding-left: 0px;
+    width: 100%;
+    padding-bottom: 5px;
+  }
+  .speaker-ratings .ratings-lesson .lesson-row .lesson-progress {
+    width: 100%;
+  }
 }
 
 @media (max-width: 586px) {
@@ -1080,6 +1169,7 @@
   body #papa main#main .profile-content .profile-content-wrapper .data-container .user-profile-data .profile-item {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -1089,12 +1179,15 @@
   body #papa main#main .profile-content .profile-content-wrapper .data-container .form-wrapp .save-decline-btns {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-pack: center;
+    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     width: 100%;
@@ -1249,10 +1342,6 @@
   body #papa main#main .lesson-home_work .contents_paragraphs .paragraph-wrapp .spoiler-container .spoiler .contents_paragraphs_list .contents_paragraphs_item input[id^="spoiler"] ~ .sub-spoiler .lesson-home_work-description .lesson-home_work {
     font-size: 12px;
   }
-  body #papa main#main .main-test .main-test_container {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
   body #papa main#main .lesson-home_work .contents_paragraphs .paragraph-wrapp .spoiler-container input[id^="spoiler"]:checked + label + .spoiler {
     padding-left: 5px;
     padding-right: 0px;
@@ -1291,16 +1380,20 @@
 @media (max-width: 512px) and (max-width: 501px) {
   body #papa main#main .certificate .certificate-info-wrapper {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     -webkit-box-pack: center;
+    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
     margin-left: 0px;
@@ -1335,9 +1428,11 @@
   body #papa main#main .filters-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-pack: center;
+    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
@@ -1392,13 +1487,16 @@
 @media (max-width: 500px) {
   body #papa main#main .help-wrapper {
     -webkit-box-pack: center;
+    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
   }
@@ -1414,10 +1512,12 @@
   }
   body #papa main#main .lesson-home_work .lesson-home_work-description .lesson-home_work .lesson-materials-title {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -1447,9 +1547,11 @@
   body #papa main#main .impression .impression-points-wrapper .range-description {
     width: 98%;
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
@@ -1548,7 +1650,8 @@
     margin-left: 0px;
     width: 79%;
     overflow: hidden;
-    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
   }
   .select-items div {
     white-space: normal;
@@ -1581,6 +1684,7 @@
   body #papa main#main .question-to-speaker .question-to-speaker_container .question-to-speaker_left-side .lesson-details-wrapper .details-list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -1593,10 +1697,12 @@
 @media (max-width: 430px) {
   body #papa main#main .certificate .certificate-info-wrapper {
     -webkit-box-pack: center;
+    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
   }
   body #papa main#main .certificate .certificate-info-wrapper .certificate-img-wrapper {
     margin-right: 0px;
@@ -1634,6 +1740,7 @@
   body #papa main#main .top-buttons-wrappper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -1786,6 +1893,9 @@
   body #papa main#main .filters-wrapper .filter.custom-select-filter {
     width: 90%;
   }
+  body #papa main#main .card-container .card .card-bottom {
+    padding: 10px;
+  }
 }
 
 @media (max-width: 369px) {
@@ -1815,8 +1925,9 @@
 
 @media (max-width: 360px) {
   body #papa main#main .speaker .speaker-items-wrapper .speaker-companies .companies-list {
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
   }
   body #papa main#main .discount .link-container .link-field .generate-link {
     width: 31px;
@@ -1919,6 +2030,7 @@
   .design-container > form {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     margin: 0 auto;
@@ -1968,6 +2080,7 @@
   .candidate-info {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     padding: 0 10px;
@@ -1997,6 +2110,7 @@
   .design-content__webinar-name {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -2011,8 +2125,9 @@
     width: 100%;
   }
   .video-inv {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
   }
   .video-inv .input-group {
     width: 100%;
@@ -2026,6 +2141,7 @@
   .ui-ux_design-content .speaker-select-wrap {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -2055,9 +2171,11 @@
   .multiselect-wrap .profile-item {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-align: start;
+    -webkit-align-items: flex-start;
         -ms-flex-align: start;
             align-items: flex-start;
   }
@@ -2079,6 +2197,7 @@
   .course-stats {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -2152,13 +2271,15 @@
   .progress-bar-wrap {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
   .progress-bar-wrap > span,
   .progress-bar-wrap .progress {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
     width: 100%;
   }
   .chart-wrap {
@@ -2235,6 +2356,7 @@
     padding-right: 0px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -2342,12 +2464,14 @@
   }
   .error-container .text .oops {
     min-height: 80px;
-    -ms-flex-preferred-size: 40%;
-        flex-basis: 40%;
+    -webkit-flex-basis: 40%;
+        -ms-flex-preferred-size: 40%;
+            flex-basis: 40%;
   }
   .error-container .text .oops {
-    -ms-flex-preferred-size: 60%;
-        flex-basis: 60%;
+    -webkit-flex-basis: 60%;
+        -ms-flex-preferred-size: 60%;
+            flex-basis: 60%;
   }
 }
 /*# sourceMappingURL=media.css.map */

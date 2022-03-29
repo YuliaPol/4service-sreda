@@ -8,6 +8,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="./style/libs/datepicker.min.css">
     <link rel="stylesheet" href="style/registration.css">
     <link rel="stylesheet" href="style/custom-select.css">
 </head>
@@ -98,6 +99,22 @@
                                 <div class="text-label">Номер телефона</div>
                                 <div class="input-cont">
                                     <input type="tel" id="phone" name="phone" minlength="10" maxlength="13" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-group form-input">
+                            <label for="fathername">
+                                <div class="text-label">Дата рождения</div>
+                                <div class="input-cont">
+                                    <input type="text" class="date-input">
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-group form-input">
+                            <label for="fathername">
+                                <div class="text-label">Дата приема на работу</div>
+                                <div class="input-cont">
+                                    <input type="text" class="date-input">
                                 </div>
                             </label>
                         </div>
@@ -199,6 +216,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script src="./script/libs/jquery.custom-select.js"></script>
+    <script src="./script/libs/jquery.maskedinput.js"></script>
+    <script src="./script/libs/datepicker.min.js"></script>
     <script src="script/registration.js"></script>
 </body>
 

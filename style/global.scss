@@ -23,11 +23,13 @@ img {
   background-image: -moz-linear-gradient( -80deg, rgb(245,85,85) 0%, rgb(252,207,49) 100%);
   background-image: -webkit-linear-gradient( -80deg, rgb(245,85,85) 0%, rgb(252,207,49) 100%);
   background-image: -ms-linear-gradient( -80deg, rgb(245,85,85) 0%, rgb(252,207,49) 100%);
+  background: linear-gradient( -80deg, rgb(245,85,85) 0%, rgb(252,207,49) 100%);
 }
 .pink-gradient-background {
   background-image: -moz-linear-gradient( -80deg, rgb(242,170,201) 0%, rgb(255,223,211) 100%);
   background-image: -webkit-linear-gradient( -80deg, rgb(242,170,201) 0%, rgb(255,223,211) 100%);
   background-image: -ms-linear-gradient( -80deg, rgb(242,170,201) 0%, rgb(255,223,211) 100%);
+  background: linear-gradient( -80deg, rgb(242,170,201) 0%, rgb(255,223,211) 100%);
   color: #ffffff;
 }
 .hide{
@@ -73,11 +75,13 @@ img {
   background-image: -moz-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   background-image: -ms-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background: linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
 }
 .active-btn{
   background-image: -moz-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   background-image: -ms-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background: linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   color: #ffffff !important;
 }
 
@@ -96,12 +100,13 @@ img {
   background-image: -moz-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   background-image: -ms-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background: linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   box-shadow: 0px 10px 12px 3px rgba(0, 0, 0, 0.1);
   &.disable-btn{
     background-color: #e5e5e5;
     color: #cbcbcb;
     box-shadow: 0px 10px 27px 3px rgba(0, 0, 0, 0.1);
-    background-image: none;
+    background: none;
     cursor: not-allowed;
   }
 }
@@ -128,6 +133,7 @@ img {
   background-image: -moz-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   background-image: -ms-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background: linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   box-shadow: 0px 10px 12px 3px rgba(0, 0, 0, 0.1);
 }
 .big-red-btn{
@@ -145,6 +151,7 @@ img {
   background-image: -moz-linear-gradient( -80deg, rgb(245,85,85) 0%, rgb(252,207,49) 100%);
   background-image: -webkit-linear-gradient( -80deg, rgb(245,85,85) 0%, rgb(252,207,49) 100%);
   background-image: -ms-linear-gradient( -80deg, rgb(245,85,85) 0%, rgb(252,207,49) 100%);
+  background: linear-gradient( -80deg, rgb(245,85,85) 0%, rgb(252,207,49) 100%);
 }
 .disable-red-btn{
   text-align: center;

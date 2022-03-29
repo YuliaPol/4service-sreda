@@ -3,7 +3,7 @@ jQuery(function ($) {
         $('.vacancy-settings').on('change', '.lesson-info .upload-logo .input-group input', function () {
             if (this.files[0]) // если выбрали файл
             {
-                $(this).next('label').html(this.files[0].name + '<img class="upload-image" src="../../../img/corp/icons/download-arrow_blue.png">');
+                $(this).next('label').html(this.files[0].name + '<img class="upload-image" src="/img/corp/icons/download-arrow_blue.png">');
                 $('<input type="hidden">'+this.files[0].name + '').insertAfter($(this));
             }
         });
@@ -365,9 +365,8 @@ jQuery(function ($) {
 
         //add new question
         $('.vacancy-settings').on('click', '.add-new-question', function () {
-            // var id_question = 1 + $(this).data('question');
-            // ajax
-            // var id_question = Math.floor(Math.random() * 100000);
+            var urlPath = $('#urlpath').data('url');
+
             var id_question;
             var courseId = $('#courseId').val();
             var length = parseInt($(this).parents('.custom-table__body').find('.question-cont').length);
@@ -377,7 +376,7 @@ jQuery(function ($) {
             if(courseId){
                 $.ajax ({
                     type: 'POST',
-                    url: "/corporate/ajax/create-block",
+                    url: urlPath + "/ajax/create-block",
                     dataType: "json",
                     data: {
                         course_id: courseId,
@@ -397,9 +396,10 @@ jQuery(function ($) {
         });
 
         function AddNewQuestionAjax(id_question, id_number, el){
+            var urlPath = $('#urlpath').data('url');
             var newQuestion =
                 '<div class="question-cont">' +
-                '<div class="custom-table__row flex j-s-b mt-50">' +
+                '<div class="custom-table__row flex j-s-b">' +
                 '    <div class="custom-table__cell course-content-name">' +
                 '       <div class="course-content-name-cont">' +
                 '            <span class="number">' + id_number + '.</span>' +
@@ -411,15 +411,15 @@ jQuery(function ($) {
                 '    </div>' +
                 '    <div class="custom-table__cell">' +
                 '        <a href="#" title="Delete" class="delete-question">' +
-                '            <img src="../../../img/corp/icons/trash.png" alt="Delete" class="delete-question">' +
+                '            <img src="/img/corp/icons/trash.png" alt="Delete" class="delete-question">' +
                 '        </a>' +
                 '        <a href="#" title="Move"  class="move-question">' +
-                '            <img src="../../../img/corp/icons/movetest.png" alt="Move">' +
+                '            <img src="/img/corp/icons/movetest.png" alt="Move">' +
                 '        </a>' +
                 '    </div>' +
                 '</div>' +
                 '<div class="question-item-cont">' +
-                '<a href="#" class="circle-add add-answer add-new-item" data-item="0" data-question="' + id_question + '">+</a>' +
+                '<a href="#" class="circle-add add-answer add-new-item" data-url="' + urlPath + '/ajax/create-lesson" data-item="0" data-question="' + id_question + '">+</a>' +
                 '</div>' +
                 '</div>';
             $('.add-new-question').data('question', id_question);
@@ -482,27 +482,52 @@ jQuery(function ($) {
         };
         //add youtube-link
         $('.vacancy-settings').on('click', '.add-new-youtube-link', function () {
+            var urlPath = $('#urlpath').data('url');
             var id_link = 1 + parseInt($(this).parents('.youtube-links').find('.video-submit').length);
             var id_block = $(this).parents('.lesson-wrap').find('.lesson-name').attr('name').split('_')[1];
             var id_lesson = $(this).parents('.lesson-wrap').find('.lesson-name').attr('name').split('_')[2];
-            var newlink = 
-                '<div class="youtube-link-item">' +
-                '<div class="youtube-link-wrapper">' +
-                '<div class="inputs-wrap">'+
-                '    <div class="input-group video-submit">' +
-                '     <div></div>'+
-                // '      <div><input type="text" class="input-shdw" name="youtube-link_'+ id_block + '_'+ id_lesson +'_'+ id_link +'" id="youtube-link_'+ id_block + '_'+ id_lesson +'_'+ id_link +'" placeholder="Укажите ссылку на видео с сервиса YouTube"></div>' +
-                '      <input type="hidden" class="youtube-duration" value="0" name="youtube-duration_'+ id_block + '_'+ id_lesson +'_'+ id_link +'" id="youtube-duration_'+ id_block + '_'+ id_lesson +'_'+ id_link +'">' +
-                '  </div>' +
-                '  </div>' +
-                '</div>' +
-                '<a href="#remove-course-popup" title="Delete"' +
-                '    class="delete-youtube-link">' +
-                '    <img src="../../../img/corp/icons/trash.png"' +
-                '       alt="Delete">' +
-                '</a>' +
-                '</div>';
-            $(newlink).insertBefore($(this));
+            var thisEl = this;
+            console.log(id_lesson);
+            if(id_lesson){
+                $.ajax ({
+                    type: 'POST',
+                    url: urlPath + "/ajax/create-youtube",
+                    dataType: "json",
+                    data: {
+                        lesson_id: id_lesson
+                    },
+                }).done(function (data) {
+                    console.log(data);
+                    id_youtube = data;
+                    insertYoutubeLink(id_block, id_lesson, id_link, id_youtube, thisEl);
+                    console.log('Добавлено видео');
+                }).fail(function (data) {
+                    // не удалось выполнить запрос к серверу
+                    console.log(data);
+                    console.log('Запрос не принят');
+                });
+            }
+  
+        });
+        function insertYoutubeLink(id_block, id_lesson, id_link, id_youtube, thisEl){
+            var newlink =  '<div class="youtube-link-item">' +
+            '<div class="youtube-link-wrapper">' +
+            '<div class="inputs-wrap">'+
+            '    <div class="input-group video-submit">' +
+            '     <input class="youtube-id" type="hidden" value="' + id_youtube + '" name="youtube-id_'+ id_block + '_'+ id_lesson +'_'+ id_link +'"></input>'+
+            '     <div></div>'+
+            // '      <div><input type="text" class="input-shdw" name="youtube-link_'+ id_block + '_'+ id_lesson +'_'+ id_link +'" id="youtube-link_'+ id_block + '_'+ id_lesson +'_'+ id_link +'" placeholder="Укажите ссылку на видео с сервиса YouTube"></div>' +
+            '      <input type="hidden" class="youtube-duration" value="0" name="youtube-duration_'+ id_block + '_'+ id_lesson +'_'+ id_link +'" id="youtube-duration_'+ id_block + '_'+ id_lesson +'_'+ id_link +'">' +
+            '  </div>' +
+            '  </div>' +
+            '</div>' +
+            '<a href="#remove-course-popup" title="Delete"' +
+            '    class="delete-youtube-link">' +
+            '    <img src="/img/corp/icons/trash.png"' +
+            '       alt="Delete">' +
+            '</a>' +
+            '</div>';
+            $(newlink).insertBefore($(thisEl));
             var input = document.createElement("input");
             input.type = "text";
             input.className = "youtube-input-field"; // set the CSS class
@@ -510,9 +535,9 @@ jQuery(function ($) {
             input.id = 'youtube-link_' + id_block + '_'+ id_lesson +'_'+ id_link;
             input.placeholder = 'Укажите ссылку на видео с сервиса YouTube';
             input.style = 'box-shadow: 0px 5px 13px 2px #e5e5e5;display: block;opacity: 1;min-height: 20px;';
-            container = $(this).prev().find('.video-submit div');
+            container = $(thisEl).prev().find('.video-submit div');
             $(input).appendTo(container); // put it into the DOM
-        });
+        }
         //add input-file
         $('.vacancy-settings').on('click', '.add-inputfile', function () {
             var id_inputfile = 1 + $(this).data('inputfile');
@@ -532,7 +557,7 @@ jQuery(function ($) {
                 '        <div class="input-group">' +
                 '            <input id="file-materials_' + id_block + '_' + id_lesson + '_' + id_inputfile + '" type="file" name="file-materials_' + id_block + '_' + id_lesson + '_' + id_inputfile + '">' +
                 '            <label for="file-materials_' + id_block + '_' + id_lesson + '_' + id_inputfile + '" id="label-file-materials_' + id_block + '_' + id_lesson + '_' + id_inputfile + '" name="label-file-materials_' + id_block + '_' + id_lesson + '_' + id_inputfile + '">' +
-                '               <img class="upload-image" src="../../../img/corp/icons/download-arrow_blue.png">' +
+                '               <img class="upload-image" src="/img/corp/icons/download-arrow_blue.png">' +
                 '            </label>' +
                 '        </div>' +
                 '    </div>' +
@@ -540,7 +565,7 @@ jQuery(function ($) {
                 '    </div>' +
                 '    <a href="#remove-course-popup" title="Delete"' +
                 '        class="delete-input-file">' +
-                '        <img src="../../../img/corp/icons/trash.png"' +
+                '        <img src="/img/corp/icons/trash.png"' +
                 '            alt="Delete">' +
                 '    </a>' +
                 '</div';
@@ -583,7 +608,6 @@ jQuery(function ($) {
         //delete youtube-link
         $('.vacancy-settings').on('click', '.delete-youtube-link', function () {
             var id_element = $(this).parents('.youtube-link-item').find('.youtube-input-field').attr('id');
-            console.log(id_element);
             $('#remove-course-popup .submit-remove-course').data('id', id_element);
             $('#remove-course-popup .submit-remove-course').data('type', 'youtube');
             $('#remove-course-popup h3').html('Вы действительно хотите удалить видео?');
@@ -595,15 +619,7 @@ jQuery(function ($) {
                 ]
             });
         });
-        // Unchecked materials
-        function checkMaterialsLength(materialsCont){
-            let materialsList = materialsCont.find('.course-materials-wrap');
-            console.log(materialsList);
-            if(materialsList.length === 0){
-                materialsCont.find('input.checkbox').click();
-            }
-        }
-        // Unchecked videos
+        // vac-settings__materials
         function checkMaterialsLength(materialsCont){
             let materialsList = materialsCont.find('.course-materials-wrap');
             console.log(materialsList);
@@ -613,13 +629,14 @@ jQuery(function ($) {
         }
         $('.remove-popup').on('click', '.submit-remove-course', function () {
             var id = $(this).data('id');
+            var urlPath = $(this).data('url');
             if ($(this).data('type') == 'question') {
                 //ajax
                 var id_block = id.split('_')[1];
                 if(id_block){
                     $.ajax ({
                         type: 'POST',
-                        url: "/corporate/ajax/remove-block",
+                        url: urlPath + "/ajax/remove-block",
                         dataType: "json",
                         data: {
                             id: id_block
@@ -643,13 +660,13 @@ jQuery(function ($) {
                 if(id_lesson){
                     $.ajax ({
                         type: 'POST',
-                        url: "/corporate/ajax/remove-lesson",
+                        url: urlPath + "/ajax/remove-lesson",
+                        // url: "/corporate/ajax/remove-lesson",
                         dataType: "json",
                         data: {
                             id: id_lesson
                         },
                     }).done(function (data) {
-                        console.log(data);
                         $('#' + id).parents('.lesson-wrap').remove();
                         var id_item = -1 + $('#' + id).parents('.question-item-cont').find('.add-new-item').data('item');
                         $('#' + id).parents('.question-item-cont').find('.add-new-item').data('item', id_item);
@@ -673,7 +690,7 @@ jQuery(function ($) {
                     if(courseId && blockId && lessonId && materialId){
                         $.ajax ({
                             type: 'POST',
-                            url: "/corporate/ajax/delete-material",
+                            url: urlPath + "/ajax/delete-material",
                             dataType: "json",
                             data: {
                                 course_id: courseId,
@@ -694,10 +711,30 @@ jQuery(function ($) {
                 }
             }
             if ($(this).data('type') == 'youtube') {
+                var urlPath = $('#urlpath').data('url');
                 var parents = $('#' + id).parents('.youtube-links');
-                $('#' + id).parents('.youtube-link-item').remove();
-                var Links = parents.find('.youtube-link-item');
-                refreshYoutubeLinks(Links);
+                var youtubeItem = $('#' + id).parents('.youtube-link-item');
+                var id_youtube = youtubeItem.find('.youtube-id').val();
+                if(id_youtube){
+                    $.ajax ({
+                        type: 'POST',
+                        url: urlPath + "/ajax/delete-youtube",
+                        dataType: "json",
+                        data: {
+                            youtube_id: id_youtube
+                        },
+                    }).done(function (data) {
+                        console.log(data);
+                        $('#' + id).parents('.youtube-link-item').remove();
+                        var Links = parents.find('.youtube-link-item');
+                        refreshYoutubeLinks(Links);
+                        console.log('Удалено видео');
+                    }).fail(function (data) {
+                        // не удалось выполнить запрос к серверу
+                        console.log(data);
+                        console.log('Запрос не принят');
+                    });
+                }
             }
         });
         function refreshYoutubeLinks(Links){
@@ -739,11 +776,18 @@ jQuery(function ($) {
             var thisEl = this;
             var id_item;
             var id_item = Math.floor(Math.random() * 100000);
+
+            var urlPath = $(this).data('url');
+            console.log(urlPath)
+            if(urlPath == undefined) {
+                urlPath = $('#urlpath_new_lesson').data('url');
+            }
+            console.log(urlPath)
             // AddNewItemAjax(id_question, id_item, order_item, thisEl);
             if(id_question){
                 $.ajax ({
                     type: 'POST',
-                    url: "/corporate/ajax/create-lesson",
+                    url: urlPath,
                     dataType: "json",
                     data: {
                         block_id: id_question,
@@ -752,7 +796,7 @@ jQuery(function ($) {
                 }).done(function (data) {
                     console.log(data);
                     id_item = parseInt(data);
-                    AddNewItemAjax(id_question, id_item, order_item,  thisEl);
+                    AddNewItemAjax(id_question, id_item, order_item,  thisEl, urlPath);
                     console.log('Создан урок');
                 }).fail(function (data) {
                     // не удалось выполнить запрос к серверу
@@ -762,7 +806,7 @@ jQuery(function ($) {
             }
         });
 
-        function AddNewItemAjax(id_question, id_item, order_item,  el ){
+        function AddNewItemAjax(id_question, id_item, order_item,  el, urlPath ){
             var newItem =
                 '<div class="lesson-wrap">' +
                 '<div class="custom-table__row flex j-s-b">' +
@@ -772,20 +816,20 @@ jQuery(function ($) {
                 '    </div>' +
                 '    <div class="custom-table__cell">' +
                 '        <a href="#" title="Edit" class="edit-lesson">' +
-                '            <img src="../../../img/corp/icons/pencil.png" alt="Edit">' +
+                '            <img src="/img/corp/icons/pencil.png" alt="Edit">' +
                 '        </a>' +
                 '        <a href="#" title="Delete" class="delete-item">' +
-                '            <img src="../../../img/corp/icons/trash.png" alt="Delete">' +
+                '            <img src="/img/corp/icons/trash.png" alt="Delete">' +
                 '         </a>' +
                 '         <a href="#" title="Move"  class="move-question">' +
-                '            <img src="../../../img/corp/icons/movetest.png" alt="Move">' +
+                '            <img src="/img/corp/icons/movetest.png" alt="Move">' +
                 '          </a>' +
                 '    </div>' +
                 '</div>' +
                 '    <div class="lesson-info" style="display: none;" id="lesson-info_' + id_question + '_' + id_item + '">' +
                 '    <div class="vac-settings__block-content">' +
                 '        <div class="input-group">' +
-                '            <textarea placeholder="Введите информацию об уроке" name="lessoninfo_' + id_question + '_' + id_item + '"></textarea>' +
+                '            <textarea placeholder="Введите информацию об уроке" name="lessoninfo_' + id_question + '_' + id_item + '" data-reqired></textarea>' +
                 '        </div>' +
                 '    </div>' +
                 // '    <div class="vac-settings__block-content">' +
@@ -829,7 +873,7 @@ jQuery(function ($) {
                 '    </div>' +
                 '    <div class="vac-settings__block vac-settings__materials">' +
                 '        <h4 class="tools-title">' +
-                '            <img src="../../../img/corp/icons/book_blue.png" alt="Book">' +
+                '            <img src="/img/corp/icons/book_blue.png" alt="Book">' +
                 '            Материалы к занятию' +
                 '            <div class="vac-tools">' +
                 '                <div class="input-group">' +
@@ -843,7 +887,7 @@ jQuery(function ($) {
                 '    </div>' +
                 '    <div class="vac-settings__block vac-settings__hw">' +
                 '       <h4 class="tools-title">' +
-                '           <img src="../../../img/corp/icons/essay.png" alt="Book">' +
+                '           <img src="/img/corp/icons/essay.png" alt="Book">' +
                 '           Домашнее задание' +
                 '           <div class="vac-tools">' +
                 '               <div class="input-group">' +
@@ -920,6 +964,7 @@ jQuery(function ($) {
                     var id_item = $(this).attr('name').split('_')[2];
                     var homework = 
                     '           <div class="input-group">' +
+                    '            <label class="dz_label">Описание<span>(*)</span> </label>' +
                     '               <textarea name="homework_' + id_question + '_' + id_item + '" placeholder="Введите информацию"></textarea>' +
                     '           </div>' +
                     '           <div class="vac-test__descr">' +
@@ -1000,7 +1045,8 @@ jQuery(function ($) {
                 if($(this).parents('.tools-title').next().find('.course-test-settings').length==0){
                     var id_question = $(this).attr('name').split('_')[1];
                     var id_item = $(this).attr('name').split('_')[2];
-                    var testSettings = 
+                    var urlPath = $('#urlpath').data('url');
+                    var testSettings =
                     '        <div class="course-test-settings">' +
                     '            <div class="vac-test__descr">' +
                     '                <p>Ограничить время прохождения теста</p>' +
@@ -1081,7 +1127,7 @@ jQuery(function ($) {
                     '                    <div class="custom-table__row flex j-s-b">' +
                     '                     <h4 class="title add-chapter">'+
                     '                       <a href="#" class="circle-add add-chapter-constructor" data-block="'+ id_question +'" data-blockitem="'+ id_item +'">' +
-                    '                           <img src="../../../img/corp/icons/chapter-img02.png" alt="">' +
+                    '                           <img src="/img/corp/icons/chapter-img02.png" alt="">' +
                     '                       </a>' +
                     '                        <div class="title">' +
                     '                            <span>Раздел 1: </span>' +
@@ -1092,7 +1138,7 @@ jQuery(function ($) {
                     '                        </div>' +
                     '                        <div class="delete-chapter-cont">' +
                     '                            <a href="#" title="Delete" class="delete-chapter">' +
-                    '                                <img src="../../../img/corp/icons/trash.png" alt="Delete">' +
+                    '                                <img src="/img/corp/icons/trash.png" alt="Delete">' +
                     '                            </a>' +
                     '                        </div>' +
                     '                        </h4>'+
@@ -1109,13 +1155,14 @@ jQuery(function ($) {
                 }
             }
             else {
+                var urlPath = $('#urlpath').data('url');
                 $(this).parents('.tools-title').next().html(' ');
                 var id_item = $(this).attr('name').split('_')[2];
                 if(id_item){
                     console.log('lesson_id: ' + id_item);
                     $.ajax ({
                         type: 'POST',
-                        url: "/corporate/ajax/unset-test",
+                        url: urlPath + "/ajax/unset-test",
                         dataType: "json",
                         data: {
                             lesson_id: id_item,

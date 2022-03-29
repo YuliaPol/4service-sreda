@@ -1,7 +1,8 @@
-document.querySelector('.link-btn').addEventListener('click', function () {
+// document.querySelector('.link-btn').addEventListener('click', function () {
+// });
+$('.link-btn').click(function(e){
     $('.link-container').fadeIn();
 });
-
 function copyElementText(id) {
     var text = document.getElementById(id).innerText;
     var elem = document.createElement("textarea");

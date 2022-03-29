@@ -6,6 +6,7 @@ $(document).ready(function () {
     $(".close-popup").click(function() {
         PopUpHide();
     });
+
 });
 function PopUpShow() {
     $(".succes-box").show();
@@ -18,5 +19,13 @@ jQuery(function ($) {
         $('.select-depart').customSelect({
             placeholder: '<span>Выберите подразделение</span>',
         });
+        if ($.fn.datepicker && $.fn.mask ) {
+            $('.date-input').datepicker({
+                view: 'years',
+                autoClose: true,
+                maxDate: new Date()
+            });
+            $('.date-input').mask('99.99.9999');
+        }
     });
 });

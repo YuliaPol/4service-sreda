@@ -37,12 +37,15 @@ body #papa main#main.landing-page .social-btn a .facebook {
   background: #2e4587;
   text-decoration: none;
   display: -webkit-inline-box;
+  display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   text-transform: uppercase;
@@ -59,23 +62,28 @@ body #papa main#main.landing-page .social-btn a .facebook::before {
   background: url(../img/icon/facebook.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  -webkit-background-size: contain;
+          background-size: contain;
   margin-right: 15px;
 }
 
 body #papa main#main.landing-page .header-landing {
   width: 100%;
   background: url(../img/landing-header-bg.png);
-  background-size: cover;
+  -webkit-background-size: cover;
+          background-size: cover;
   background-repeat: no-repeat;
   background-position: left;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
   -webkit-box-pack: stretch;
+  -webkit-justify-content: stretch;
       -ms-flex-pack: stretch;
           justify-content: stretch;
 }
@@ -87,7 +95,8 @@ body #papa main#main.landing-page .header-landing .img-col {
 body #papa main#main.landing-page .header-landing .img-col .landing-img {
   background-image: url(../img/header-img.png);
   background-position: left;
-  background-size: contain;
+  -webkit-background-size: contain;
+          background-size: contain;
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
@@ -138,6 +147,9 @@ body #papa main#main.landing-page .header-landing .header-content .text .go-to-c
   border: none;
   text-decoration: none;
   text-transform: uppercase;
+  background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: -webkit-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: -o-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   background-image: linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   -webkit-box-shadow: 0px 10px 27px 3px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 10px 27px 3px rgba(0, 0, 0, 0.1);
@@ -168,6 +180,7 @@ body #papa main#main.landing-page .discount h3.title {
 
 body #papa main#main.landing-page .discount .discount-item-wrapper {
   -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
 }
@@ -178,12 +191,15 @@ body #papa main#main.landing-page .discount .discount-item-wrapper .discount-ite
 
 body #papa main#main.landing-page .discount .discount-item-wrapper .discount-item .discount-icons {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: end;
+  -webkit-align-items: flex-end;
       -ms-flex-align: end;
           align-items: flex-end;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
@@ -266,6 +282,9 @@ body #papa main#main.landing-page .video-registration .video-registration-wrappe
   display: block;
   outline: none;
   border: none;
+  background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: -webkit-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: -o-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   background-image: linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
 }
 
@@ -285,6 +304,9 @@ body #papa main#main.landing-page .registration-btn {
   display: block;
   outline: none;
   border: none;
+  background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: -webkit-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: -o-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   background-image: linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
 }
 
@@ -333,6 +355,9 @@ body #papa main#main.landing-page .first-ten-member .go-to-course .take-course {
   display: block;
   outline: none;
   border: none;
+  background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: -webkit-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: -o-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   background-image: linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
 }
 
@@ -394,16 +419,20 @@ body #papa main#main.landing-page .you-can-get .you-can-get_container .you-can-g
 
 body #papa main#main.landing-page .you-can-get .you-can-get-block {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   padding-bottom: 35px;
   padding-top: 35px;
 }
@@ -411,16 +440,20 @@ body #papa main#main.landing-page .you-can-get .you-can-get-block {
 body #papa main#main.landing-page .you-can-get .you-can-get-block .you-can-get-list_item {
   width: calc( 33% - 40px);
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   display: block;
@@ -488,6 +521,7 @@ body #papa main#main.landing-page .you-can-get .you-can-get_bottom-text .you-can
   width: 5px;
   height: 5px;
   border-radius: 50%;
+  background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   background-image: -ms-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
 }
 
@@ -514,7 +548,8 @@ body #papa main#main.landing-page .design .reg_item:before {
   top: 7px;
   left: -39px;
   background-repeat: no-repeat;
-  background-size: contain;
+  -webkit-background-size: contain;
+          background-size: contain;
 }
 
 body #papa main#main.landing-page .design .book:before {
@@ -542,7 +577,8 @@ body #papa main#main.landing-page .design .conditions-list-wrapper .requirements
   background-image: url(../img/icon/resume.png);
   background-repeat: no-repeat;
   position: absolute;
-  background-size: contain;
+  -webkit-background-size: contain;
+          background-size: contain;
   left: -35px;
   top: -3px;
 }
@@ -562,6 +598,7 @@ body #papa main#main.landing-page .design .conditions-list-wrapper .conditions-l
   width: 5px;
   height: 5px;
   border-radius: 50%;
+  background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
   background-image: -ms-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
 }
 
@@ -652,7 +689,8 @@ body #papa main#main.landing-page .cards .card-container .card-item.bronze-card 
   z-index: 1;
   color: #fff;
   background-image: url(../img/landing-card/bronze-card.png);
-  background-size: auto 180%;
+  -webkit-background-size: auto 180%;
+          background-size: auto 180%;
   background-position: 50% 0%;
   background-repeat: no-repeat;
   font-weight: bold;
@@ -674,7 +712,8 @@ body #papa main#main.landing-page .cards .card-container .card-item.silver-card 
   position: relative;
   z-index: 1;
   background-image: url(../img/landing-card/silver-card.png);
-  background-size: auto 180%;
+  -webkit-background-size: auto 180%;
+          background-size: auto 180%;
   background-position: 50% 0%;
   background-repeat: no-repeat;
   font-weight: bold;
@@ -697,7 +736,8 @@ body #papa main#main.landing-page .cards .card-container .card-item.golden-card 
   z-index: 1;
   color: #fff;
   background-image: url(../img/landing-card/golden-card.png);
-  background-size: auto 180%;
+  -webkit-background-size: auto 180%;
+          background-size: auto 180%;
   background-position: 50% 0%;
   background-repeat: no-repeat;
   font-weight: bold;
@@ -809,9 +849,11 @@ body #papa main#main.landing-page .questions .questions_content .write_mail .sen
   background-color: rgba(0, 0, 0, 0.4);
   /* Black w/ opacity */
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   /* Modal Content */
@@ -820,6 +862,7 @@ body #papa main#main.landing-page .questions .questions_content .write_mail .sen
 
 .custom-popup-succes.show {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
@@ -875,8 +918,9 @@ body #papa main#main.landing-page .questions .questions_content .write_mail .sen
 @media (max-width: 1200px) {
   body #papa main#main.landing-page .you-can-get .you-can-get_container,
   body #papa main#main.landing-page .discount .discount-item-wrapper {
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
   }
   body #papa main#main.landing-page .you-can-get .you-can-get-block .you-can-get-list_item {
     width: calc( 50% - 15px);
@@ -991,6 +1035,7 @@ body #papa main#main.landing-page .questions .questions_content .write_mail .sen
   }
   body #papa main#main.landing-page .discount .discount-item-wrapper {
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
   }
@@ -1030,6 +1075,7 @@ body #papa main#main.landing-page .questions .questions_content .write_mail .sen
   }
   body #papa main#main.landing-page .cards .card-container {
     -webkit-box-pack: center;
+    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
@@ -1110,8 +1156,9 @@ body #papa main#main.landing-page .questions .questions_content .write_mail .sen
     padding-top: 20px;
   }
   body #papa main#main.landing-page .header-landing {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
   }
   body #papa main#main.landing-page .our-conditions .conditions-list-wrapper .conditions-list {
     margin-left: 0px;

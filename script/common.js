@@ -373,17 +373,6 @@ jQuery(function ($) {
              }
         });
 
-        //Course constructor certificate
-        $('.cert-type-wrap select').change(function() {
-            if($(this).val() == 0) {
-                $('.course-certification').show();
-                $('.test-certification').hide();
-            } else {
-                $('.course-certification').hide();
-                $('.test-certification').show();
-            }
-        });
-
         //Certificate tools title
         // $('.cert-title.tools-title .vac-tools input').change(function() {
 

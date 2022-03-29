@@ -1170,5 +1170,115 @@ jQuery(function ($) {
                 Sections.find('.delete-chapter').fadeIn(0);
             }
         }
+        //Course constructor certificate
+        $('.cert-type-wrap select').change(function() {
+            if($(this).val() == 0) {
+                $('.course-certification').show();
+                $('.test-certification').hide();
+                resetTestCertification();
+                clearValues('.test-certification');
+            } else {
+                $('.course-certification').hide();
+                $('.test-certification').show();
+                clearValues('.course-certification');
+                if($('.test-certification').find('.add-chapter-constructor').length == 0){
+                    addFirstTestChapter('.test-certification');
+                }
+            }
+        });
+        function addFirstTestChapter(block){
+            var section = 1;
+            var thidEl = $(block).find('.custom-table__header');;
+            var testId = $('.test-id').val();
+            console.log(testId);
+            if(testId){
+                $.ajax ({
+                    type: 'POST',
+                    url: "/corporate/ajax/create-test-chapter-course",
+                    dataType: "json",
+                    data: {
+                        id: testId
+                    },
+                }).done(function (data) {
+                    console.log(data);
+                    var chapterId = data;
+                    addFirstChapterTestCourse(chapterId, thidEl, section);
+                    console.log('Добавлен раздел');
+                }).fail(function (data) {
+                    // не удалось выполнить запрос к серверу
+                    console.log(data);
+                    console.log('Запрос не принят');
+                });
+            }
+        }
+        function addFirstChapterTestCourse(chapterId, thidEl, section){
+            var newChapter =
+            '<div class="custom-table__body">' +
+            '    <div class="custom-table__row flex j-s-b">' +
+            '        <h4 class="title add-chapter">' +
+            '            <a href="#" class="circle-add add-chapter-constructor">' +
+            '                <img src="../../../img/corp/icons/chapter-img02.png" alt="">' +
+            '             </a>' +
+            '             <div class="title">' +
+            '               <span>Раздел ' + section + ': </span>' +
+            '               <input type="text" class="answer input-shdw" value="" placeholder="«Название»" id="chapter_' + chapterId + '_' + section + '" name="chapter_' + chapterId  + '_' + section + '">' +
+            '              </div>' +
+            '              <div class="delete-chapter-cont">' +
+            '               <a href="#" title="Delete" class="delete-chapter">' +
+            '                   <img src="../../../img/corp/icons/trash.png" alt="Delete">' +
+            '               </a>' +
+            '                <a href="#" title="Move" class="move-chapter">'+
+            '                   <img src="../../../img/corp/icons/movetest.png" alt="Move">'+
+            '               </a>'+
+            '              </div>' +
+            '         </h4>' +
+            '    </div>' +
+            '   <div class="test-quetions-wrappper"></div>'+
+            '    <a href="#" class="circle-add add-chapter-question" data-section="' + section + '" data-question="0">+</a>' +
+            '</div>';
+            $(newChapter).insertAfter($(thidEl));
+            section = 1;
+            var Sections = $('.test-table-constructor').find('.custom-table__body');
+            $('.test-table-constructor').sortable(
+                {
+                    appendTo: ".test-table-constructor",
+                    cancel: ".circle-add, input, select, label, .delete-chapter",
+                    axis: "y",
+                    items: "> .custom-table__body",
+                    deactivate: function (event, ui) {
+                        RefreshOnStart();
+                    }
+                }
+            );
+            RefreshOnSections(Sections);
+        }
+        function clearValues(block){
+            $(block).find('textarea').val('');
+            $(block).find('input[type=text]').val('');
+            $(block).find('.has-error').removeClass('has-error');
+        }
+        function resetTestCertification(){
+            var course_Id = $('.course-id').val();
+            var test_id = $('.test-id').val();
+            if(test_id){
+                $('.test-certification').find('.custom-table__body').remove();
+                console.log('test_id: ' + test_id);
+                $.ajax ({
+                    type: 'POST',
+                    url: "/corporate/ajax/unset-test-to-course",
+                    dataType: "json",
+                    data: {
+                        test_id: test_id,
+                    },
+                }).done(function (data) {
+                    console.log(data);
+                    console.log('Тест отключен');
+                }).fail(function (data) {
+                    // не удалось выполнить запрос к серверу
+                    console.log(data);
+                    console.log('Запрос не принят');
+                });
+            }
+        }
     });
 });

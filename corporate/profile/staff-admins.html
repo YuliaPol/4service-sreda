@@ -7,6 +7,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="../../style/libs/magnific-popup.css">
+    <link rel="stylesheet" href="../../style/libs/select2.min.css">
     <link rel="stylesheet" href="../../style/style.css">
     <link rel="stylesheet" href="../../style/roman.css">
     <link rel="stylesheet" href="../../style/i-style/style.css">
@@ -164,7 +165,9 @@
                     </form>
                 </div>
             </div>
-
+            <div class="add-staff-wrapper">
+                <a href="#edit-staff-popup" class="circle-add add-staff">+</a>
+            </div>
             <div class="table-wrap mt-50">
                 <div class="custom-table staff-table">
                     <div class="custom-table__header flex j-s-b">
@@ -185,10 +188,10 @@
                             <div class="custom-table__cell">Spectra</div>
                             <div class="custom-table__cell">UI/UX desinger</div>
                             <div class="custom-table__cell">
-                                <a href="#" title="Edit">
+                                <a href="#edit-staff-popup" class="edit-staff" title="Edit">
                                     <img src="../../img/corp/icons/pencil.png" alt="Edit">
                                 </a>
-                                <a href="#" title="Delete">
+                                <a href="#remove-staff-popup" title="Delete" class="delete-member" data-member-id="1">
                                     <img src="../../img/corp/icons/trash.png" alt="Delete">
                                 </a>
                             </div>
@@ -201,10 +204,10 @@
                             <div class="custom-table__cell">Департамент HR</div>
                             <div class="custom-table__cell">Верстальщик</div>
                             <div class="custom-table__cell">
-                                <a href="#" title="Edit">
+                                <a href="#edit-staff-popup"  class="edit-staff"  title="Edit">
                                     <img src="../../img/corp/icons/pencil.png" alt="Edit">
                                 </a>
-                                <a href="#" title="Delete">
+                                <a href="#remove-staff-popup" title="Delete" class="delete-member"  data-member-id="1">
                                     <img src="../../img/corp/icons/trash.png" alt="Delete">
                                 </a>
                             </div>
@@ -217,17 +220,15 @@
                             <div class="custom-table__cell">Spectra</div>
                             <div class="custom-table__cell">UI/UX desinger</div>
                             <div class="custom-table__cell">
-                                <a href="#" title="Edit">
+                                <a href="#edit-staff-popup" class="edit-staff"  title="Edit">
                                     <img src="../../img/corp/icons/pencil.png" alt="Edit">
                                 </a>
-                                <a href="#" title="Delete">
+                                <a href="#remove-staff-popup" title="Delete" class="delete-member"  data-member-id="1">
                                     <img src="../../img/corp/icons/trash.png" alt="Delete">
                                 </a>
                             </div>
                         </div>
                     </div>
-
-                    <a href="#add-staff-popup" class="circle-add add-staff">+</a>
                 </div>
             </div>
 
@@ -254,8 +255,12 @@
                 </div>
                 <div class="design-content__row search-wrap search-wrap__tests">
                     <form>
+                        <div class="form-group field-userprofilesearch-searchname">
+                            <input type="text" id="userprofilesearch-searchname" class="form-control" name="UserProfileSearch[searchName]" value="fse" placeholder="Поиск по ФИО">
+                            <div class="help-block"></div>
+                            </div>
                         <input type="submit" value="" />
-                        <input type="search" placeholder="Поиск по ФИО" />
+                        <!-- <input type="search" placeholder="Поиск по ФИО" /> -->
                     </form>
                 </div>
             </div>
@@ -342,7 +347,6 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#added-staff-popup" class="circle-add add-staff">+</a>
                 </div>
             </div>
 
@@ -352,6 +356,86 @@
     </main>
 </div>
 
+<div id="edit-staff-popup" class="mfp-hide add-staff-popup custom-popup">
+    <h3>Редактировать сотрудника</h3>
+    <form action="" class="add-staff-form">
+        <div class="input-group">
+            <span>ФИО</span>
+            <input type="text" class="input-shdw" name="add-staff_name" />
+            <p class="alert-error"  style="display: none">Заполните, пожалуйста, поле</p>
+        </div>
+        <div class="input-group">
+            <span>Email</span>
+            <input type="email" class="input-shdw" name="add-staff_email" />
+            <p class="alert-error"  style="display: none">Заполните, пожалуйста, поле</p>
+        </div>
+        <div class="input-group">
+            <span>Должность</span>
+            <div class="select-wrapper">
+                <select name="department">
+                    <option value="10">UI/UX desinger</option>
+                    <option value="12">Верстальщик</option>
+                    <option value="14">UI/UX desinger</option>
+                </select>
+            </div>
+        </div>
+        <div class="input-group">
+            <span>Подразделение</span>
+            <div class="select-wrapper">
+                <select name="department">
+                    <option value="10">SREDA</option>
+                    <option value="12">Отдел ревизий</option>
+                    <option value="14">Отдел технических специалистов</option>
+                </select>
+            </div>
+        </div>
+        <div class="input-group">
+            <span>Компания</span>
+            <div class="select-wrapper">
+                <select name="region">
+                    <option value="10">Компания 1</option>
+                    <option value="12">Компания 2</option>
+                    <option value="14">Компания 3</option>
+                </select>
+            </div>
+        </div>
+        <div class="input-group">
+            <span>Роль</span>
+            <div class="select-wrapper">
+                <select name="location">
+                    <option value="10">Администратор</option>
+                    <option value="12">Студент</option>
+                </select>
+            </div>
+        </div>
+        <div class="input-group">
+            <span>Статус</span>
+            <div class="select-wrapper">
+                <select name="location">
+                    <option value="10">Активный</option>
+                    <option value="12">Неактивный</option>
+                </select>
+            </div>
+        </div>
+        <div class="input-group">
+            <div class="preloader-wrapper" style="display: none;">
+                <div class="load-wrapper">
+                    <div class="load">
+                        <hr><hr><hr><hr>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" class="box-shadow blue-gradient-background submit-staff" value="Отправить" />
+        </div>
+    </form>
+
+</div>
+
+<div id="remove-staff-popup" class="remove-popup custom-popup mfp-hide">
+    <h3>Вы действительно хотите удалить сотрудника?</h3>
+    <a href="#" class="submit-remove-staff popup-modal-dismiss">Да</a>
+    <a href="#" class="popup-modal-dismiss">Нет</a>
+</div>
 <div id="add-staff-popup" class="mfp-hide add-staff-popup custom-popup">
     <h3>Добавить сотрудниов</h3>
     <form action="" class="add-staff-form">
@@ -381,6 +465,10 @@
     <h3>Отлично!</h3>
     <p>Пользователям будет отправлено письмо с доступом и инструкциями</p>
 </div>
+<div id="edited-staff-popup" class="mfp-hide added-staff-popup custom-popup">
+    <h3>Отлично!</h3>
+    <p>Новые данные пользователя сохранены</p>
+</div>
 
 <script
         src="https://code.jquery.com/jquery-1.12.4.min.js"
@@ -388,15 +476,70 @@
         crossorigin="anonymous"></script>
 <script src="../../script/libs/jquery.magnific-popup.min.js"></script>
 <script src="../../script/libs/jquery.custom-select.js"></script>
+<script src="../../script/libs/select2.min.js"></script>
 <script src="../../script/inner.js"></script>
 <script src="../../script/resp-menu.js"></script>
 <script src="../../script/common.js"></script>
 <script>
     jQuery(function ($) {
         $(document).ready(function () {
+            $('.add-staff-form').submit(function(e){
+                e.preventDefault;
+                var el = $(this).find('input');
+                var erroreArrayElemnts = [];
+                for (var i = 0; i < el.length; i++){
+                    if (el[i].tagName === 'INPUT'){
+                        if(!$(el[i]).val()){
+                            $(el[i]).parents('.input-group').addClass('has-error');
+                            $(el[i]).focus(function(e){
+                                $(this).parents('.input-group').removeClass('has-error');
+                            });
+                        }
+                    }
+                }
+                if(erroreArrayElemnts.length>0){
+                    console.log('Valid error');
+                    console.log(erroreArrayElemnts);
+                    return false;
+                }
+            });
+            $('.delete-member').magnificPopup();
+            $('.candidate-container').on('click', '.delete-member', function () {
+                var member_id = $(this).attr('data-member-id');
+                $('#remove-course-popup .submit-remove-course-memebers').attr('data-member-id', member_id);
+            });
+            $('.candidate-container').on('click', '.edit-staff', function () {
+                var member_id = $(this).attr('data-member-id');
+                if(member_id) {
+
+                }
+            });
+            $('.submit-remove-course-memebers').on('click', function (e) {
+                var member_id = $(this).attr('data-member-id');
+                // $.ajax({
+                //     type: 'POST',
+                //     url: '/corporate/ajax/delete-user',
+                //     data: {
+                //         member_id: member_id,
+                //     },
+                // }).done(function () {
+                //     // document.location.reload(true);
+                //     $.pjax.reload({container: '#pjax-members-list', async: false});
+                //     $.pjax.reload({container: '#pjax-list', async: false});
+                //     $('.delete-member').magnificPopup();
+                // }).fail(function () {
+                //     alert('Чтото пошло не так');
+                // });
+            });
+            $('.test-member-table').on('click', '.delete-member', function () {
+            });
             $('.ui-ux_design-content select').customSelect();
+            $('.custom-popup select').select2({
+                minimumResultsForSearch: Infinity,
+            });
 
             $('.add-staff').magnificPopup();
+            $('.edit-staff').magnificPopup();
 
             $(document).on('click', '.popup-modal-dismiss', function (e) {
                 e.preventDefault();

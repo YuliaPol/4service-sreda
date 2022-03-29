@@ -117,6 +117,7 @@
                 <div class="add-info-wrapper">
                     <p class="mt-15 add-info">Проверка домашнего задания занимает от 3 до 7 дней. </p>
                     <p class="add-info">О результатах Вы будете проинформированы в уведомлении</p>
+                    <p class="add-info" style="color: red;">Вы можете продолжить выполнение следующих уроков, НО прогресс текущего урока не будет засчитан до принятия ДЗ спикером</p>
                 </div>
             </div>
         </div>
@@ -152,7 +153,14 @@
     <div id="papa">
         <header id="header">
             <div class="logo">
-                <a href="courses.html"><img src="img/logo.png" alt=""></a>
+                <div class="logo-wrap">
+                    <a href="courses.html">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                    <div class="role-name">
+                        редактор
+                    </div>
+                </div>
                 <div id="menu-3-lines" class="menu-absolute">
                     <div class="line top-line"></div>
                     <div class="line mid-line"></div>
@@ -277,14 +285,19 @@
                     <div class="question-to-speaker_right-side">
                         <h3 class="question-to-speaker-title">ЗАДАТЬ ВОПРОС СПИКЕРУ</h3>
                         <div class="speaker-chat">
-                            <div class="speaker-avatar-wrapper">
-                                <a href="speaker.html">
-                                    <div class="speaker-avatar">
-
-                                    </div>
-                                </a>
-                                <p class="speaker-name bold">Елена</p>
-                                <p class="speaker-name bold">Цысарь</p>
+                            <div class="speaker-block-course-teaching">
+                                <div class="speaker-avatar-wrapper">
+                                    <a href="speaker.html">
+                                        <div class="speaker-avatar">
+                                
+                                        </div>
+                                    </a>
+                                    <p class="speaker-name bold">Елена</p>
+                                    <p class="speaker-name bold">Цысарь</p>
+                                </div>
+                                <div class="speaker-description">
+                                    <p>описание описание описание описание описание описание описание описание описание описание</p>
+                                </div>
                             </div>
                             <div class="messages-wrapper">
                                 <div class="user-message">
@@ -512,7 +525,37 @@
                                                 </ul>
                                                 <div class="home-work-materials">
                                                     <div class="video-block">
-                                                        <div class="lesson-video" data-video="https://www.youtube.com/watch?v=rUWxSEwctFU" data-lesson="1" id="lesson-video-1">
+                                                        <div class="lesson-video"
+                                                            data-video="https://www.youtube.com/watch?v=rUWxSEwctFU"
+                                                            data-lesson="1" id="lesson-video-1">
+                                                        </div>
+                                                        <input class="video-seen" type="hidden" name="lesson-video-1" value="false">    
+                                                    </div>
+                                                    <div class="video-block">
+                                                        <div class="lesson-video"
+                                                        data-video="https://www.youtube.com/watch?v=6LU33EpwxYA"
+                                                        data-lesson="1" id="lesson-video-11">
+                                                        </div>
+                                                        <input class="video-seen" type="hidden" name="lesson-video-1" value="false">    
+                                                    </div>
+                                                    <div class="video-block">
+                                                        <div class="lesson-video"
+                                                        data-video="https://www.youtube.com/watch?v=vb0ZWc70gOk"
+                                                        data-lesson="1" id="lesson-video-12">
+                                                        </div>
+                                                        <input class="video-seen" type="hidden" name="lesson-video-1" value="false">    
+                                                    </div>
+                                                    <div class="video-block">
+                                                        <div class="lesson-video"
+                                                        data-video="https://www.youtube.com/watch?v=yXL9ur6UGvQ"
+                                                        data-lesson="1" id="lesson-video-13">
+                                                        </div>
+                                                        <input class="video-seen" type="hidden" name="lesson-video-1" value="false">    
+                                                    </div>
+                                                    <div class="video-block">
+                                                        <div class="lesson-video"
+                                                        data-video="https://www.youtube.com/watch?v=rUWxSEwctFU"
+                                                        data-lesson="1" id="lesson-video-14">
                                                         </div>
                                                         <input class="video-seen" type="hidden" name="lesson-video-1" value="false">    
                                                     </div>
@@ -700,8 +743,8 @@
                                                                                         name="optradio2_1"
                                                                                         class="radio__option">
                                                                                     <span class="answer">
-                                                                                        <div class="img-answer"
-                                                                                            style="background-image: url(./img/speaker.png);">
+                                                                                        <div class="img-answer">
+                                                                                            <img src="./img/speaker.png" alt="">
                                                                                         </div>
                                                                                     </span>
                                                                                     <span class="checkmark"></span>
@@ -1337,10 +1380,10 @@
                                 src="img/icon/upload.png" class="upload-arrow"
                                 alt=""></label>
                     </div>
-                    <div class="comment-wrapper">
+                    <!-- <div class="comment-wrapper">
                         <textarea class="hw-comment"
                             placeholder="Комментарий к ДЗ"></textarea>
-                    </div>
+                    </div> -->
                     <div class="send-btn-container">
                         <button class="send-btn box-shadow send-homework"
                         data-chekelesson="02.02.2010" data-lesson="2"  data-course="4"
@@ -1682,83 +1725,155 @@
     <script src="script/validBigRadio.js"></script>
     <script src="script/share-popup.js"></script>
     <script src="script/courseTeachingAttachedFileValidation.js"></script>
-    <script>
+    <script type="text/javascript">
+        // get .player nodes
+        var playerDivs = document.querySelectorAll(".lesson-video");
+        // nodelist to array to use forEach();
+        var playerDivsArr = [].slice.call(playerDivs);
+        var players = new Array(playerDivsArr.length);
+        var youtube = document.querySelectorAll(".lesson-video");
         var tag = document.createElement('script');
         tag.src = "https://www.youtube.com/iframe_api";
         var firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        // get .player nodes
-        var playerDivs = document.querySelectorAll(".lesson-video");
-
-        // nodelist to array to use forEach();
-        var playerDivsArr = [].slice.call(playerDivs);
-
-        var players = new Array(playerDivsArr.length);
-        var waypoints = new Array(playerDivsArr.length);
-
-        // when youtube stuff is ready
         function onYouTubeIframeAPIReady() {
-            // create yt players
-            playerDivsArr.forEach(function (e, i) { // forEach ...
-                let videoId = youtube_parser($('#' + e.id).attr('data-video'));
-                let lessonId = $('#' + e.id).attr('data-lesson');
-                let videoCont = $('#' + e.id).parents('.video-block');
-                // console.log(lessonId);
-                players[i] = new YT.Player(e.id, {
-                    height: '520',
-                    width: '760',
-                    videoId: videoId,
-                    events: {
-                        'onStateChange': onPlayerStateChange,
-                    }
-                })
-                function onPlayerStateChange(event) {
-                    if (event.data == 1) {
-                        if(!videoCont.attr('data-time')){
-                            videoCont.attr('data-time', new Date().getTime() / 1000);
+            for (var i = 0; i < youtube.length; i++) {
+                let videoId = youtube_parser($('#' + youtube[i].id).attr('data-video'));
+                let lessonId = $('#' + youtube[i].id).attr('data-lesson');
+                let videoCont = $('#' + youtube[i].id).parents('.video-block');
+                var source = "https://img.youtube.com/vi/" + videoId + "/sddefault.jpg";
+                var image = new Image();
+                image.src = source;
+                image.addEventListener("load", function () {
+                    youtube[i].appendChild(image);
+                }(i));
+                var index = i;
+                youtube[i].addEventListener("click", function (e) {
+                    console.log(this.id);
+                    players[index] = new YT.Player(this.id, {
+                        height: '520',
+                        width: '760',
+                        videoId: videoId,
+                        events: {
+                            'onStateChange': onPlayerStateChange,
+                            'onReady': onPlayerReady,
                         }
-                    }
-                    if (event.data == 0) {
-                        let currentTime = new Date().getTime() / 1000 -  parseInt(videoCont.attr('data-time'));
-                        let duration = players[i].getDuration();
-                        console.log('currentTime: ' + currentTime);
-                        console.log('duration: ' + duration);
-                        if (currentTime > duration * 0.9) {
-                            videoCont.find('.video-seen').val('true');
-                            checkPassedLesson(videoCont.parents('.contents_paragraphs_item'));
-                            $.ajax ({
-                                type: 'POST',
-                                url: "/corporate/ajax/create-test-item",
-                                dataType: "json",
-                                data: {
-                                    lesson_id: lessonId,
-                                    reason: 'youtube',
-                                },
-                            }).done(function (data) {
-                                console.log(data);
-                                console.log('Видео просмотрено');
-                            }).fail(function (data) {
-                                // не удалось выполнить запрос к серверу
-                                console.log(data);
-                                console.log('Запрос не принят');
-                            });
-                        }
-                    }
-                }
-            })
-
-            // create waypoints
-            $(".player").each(function (i, e) {
-                waypoints[i] = new Waypoint({
-                    element: e,
-                    handler: function () {
-                        players[i].playVideo();
-                    }
-                })
-            });
-
+                    });
+                });
+            };
         }
+        function onPlayerReady(event) {
+            console.log('player ready');
+            event.target.playVideo();
+        }
+        function onPlayerStateChange(event) {
+            var videoCont = $('#' + event.target.m.id).parents('.video-block');
+            var lessonId = $('#' + event.target.m.id).attr('data-lesson');
+            if (event.data == 0) {
+                videoCont.find('.video-seen').val('true');
+                checkPassedLesson(videoCont.parents('.contents_paragraphs_item'));
+                $.ajax ({
+                    type: 'POST',
+                    url: "/corporate/ajax/create-test-item",
+                    dataType: "json",
+                    data: {
+                        lesson_id: lessonId,
+                        reason: 'youtube',
+                    },
+                }).done(function (data) {
+                    console.log(data);
+                    console.log('Видео просмотрено');
+                }).fail(function (data) {
+                    // не удалось выполнить запрос к серверу
+                    console.log(data);
+                    console.log('Запрос не принят');
+                });
+            }
+        }
+    </script>
+    <script>
+        // var tag = document.createElement('script');
+        // tag.src = "https://www.youtube.com/iframe_api";
+        // var firstScriptTag = document.getElementsByTagName('script')[0];
+        // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // // get .player nodes
+        // var playerDivs = document.querySelectorAll(".lesson-video");
+
+        // // nodelist to array to use forEach();
+        // var playerDivsArr = [].slice.call(playerDivs);
+
+        // var players = new Array(playerDivsArr.length);
+        // var waypoints = new Array(playerDivsArr.length);
+        // when youtube stuff is ready
+        // function onYouTubeIframeAPIReady() {
+        //     // create yt players
+        //     playerDivsArr.forEach(function (e, i) { // forEach ...
+        //         let videoId = youtube_parser($('#' + e.id).attr('data-video'));
+        //         let lessonId = $('#' + e.id).attr('data-lesson');
+        //         let videoCont = $('#' + e.id).parents('.video-block');
+        //         // console.log(lessonId);
+        //         players[i] = new YT.Player(e.id, {
+        //             height: '520',
+        //             width: '760',
+        //             videoId: videoId,
+        //             events: {
+        //                 'onStateChange': onPlayerStateChange,
+        //                 'onReady': onPlayerReady,
+        //             }
+        //         });
+        //         function onPlayerReady(event) {
+        //             console.log('player ready');
+        //             event.target.playVideo();
+        //         }
+                
+        //         function onPlayerStateChange(event) {
+        //             if (event.data == 1) {
+        //                 if(!videoCont.attr('data-time')){
+        //                     videoCont.attr('data-time', new Date().getTime() / 1000);
+        //                 }
+        //             }
+        //             if (event.data == 0) {
+        //                 let currentTime = new Date().getTime() / 1000 -  parseInt(videoCont.attr('data-time'));
+        //                 let duration = players[i].getDuration();
+        //                 console.log('currentTime: ' + currentTime);
+        //                 console.log('duration: ' + duration);
+        //                 if (currentTime > duration * 0.9) {
+        //                     videoCont.find('.video-seen').val('true');
+        //                     checkPassedLesson(videoCont.parents('.contents_paragraphs_item'));
+        //                     $.ajax ({
+        //                         type: 'POST',
+        //                         url: "/corporate/ajax/create-test-item",
+        //                         dataType: "json",
+        //                         data: {
+        //                             lesson_id: lessonId,
+        //                             reason: 'youtube',
+        //                         },
+        //                     }).done(function (data) {
+        //                         console.log(data);
+        //                         console.log('Видео просмотрено');
+        //                     }).fail(function (data) {
+        //                         // не удалось выполнить запрос к серверу
+        //                         console.log(data);
+        //                         console.log('Запрос не принят');
+        //                     });
+        //                 }
+        //             }
+        //         }
+        //     })
+
+        //     // create waypoints
+        //     $(".player").each(function (i, e) {
+        //         waypoints[i] = new Waypoint({
+        //             element: e,
+        //             handler: function () {
+        //                 players[i].playVideo();
+        //             }
+        //         })
+        //     });
+
+        // }
+        
         function youtube_parser(url){
             var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
             var match = url.match(regExp);

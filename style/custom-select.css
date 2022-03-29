@@ -18,6 +18,8 @@
   position: absolute;
   margin-left: 10px;
   -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 
@@ -38,7 +40,8 @@
   position: relative;
   cursor: pointer;
   white-space: nowrap;
-  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
   overflow: hidden;
 }
 
@@ -52,8 +55,9 @@
   margin-left: 10px;
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
+  -o-transition: -o-transform 0.3s ease;
   transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease, -o-transform 0.3s ease;
 }
 
 .custom-select .custom-select__dropdown {
@@ -78,6 +82,7 @@
   background: #ffffff;
   outline: none;
   -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
   transition: color 0.3s ease;
   cursor: pointer;
 }

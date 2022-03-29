@@ -399,7 +399,23 @@ body {
 .company-input {
   display: none;
 }
-
+div.datepicker {
+  font-family: "Montserrat", sans-serif;
+}
+.datepicker .datepicker--nav {
+  font-weight: bold;
+}
+.datepicker  .datepicker--cell.-current-{
+  font-weight: bold;
+}
+.datepicker .datepicker--day-name {
+  font-weight: bold;
+  color: inherit;
+}
+.datepicker .datepicker--cell.-selected-, 
+.datepicker .datepicker--cell.-selected-.-current- {
+  background-color: #357ebd;
+}
 @media screen and (max-width: 1600px) {
   .container-enter .body-enter,
 .container-enter .body-enter .form-enter,

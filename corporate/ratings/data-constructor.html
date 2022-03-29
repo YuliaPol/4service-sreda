@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <link rel="stylesheet" href="../../style/roman.css">
     <link rel="stylesheet" href="../../style/i-style/style.css">
-    <link rel="stylesheet" href="../../style/media.css"> 
+    <link rel="stylesheet" href="../../style/media.css">
     <!-- Styles -->
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
 
@@ -188,8 +188,8 @@
                                         <option value="1">Курс 1</option>
                                         <option value="2">Курс 2</option>
                                         <option value="3">Курс 3</option>
-                                        <option value="4">Курс 4</option>
-                                        <option value="5">Курс 5</option>
+                                        <option selected value="4">Курс 4</option>
+                                        <option selected value="5">Курс 5</option>
                                         <option value="6">Курс 6</option>
                                         <option value="7">Курс 7</option>
                                     </select>
@@ -251,12 +251,435 @@
                             </div>
                         </div>
                         <div class="btn-submit-cont">
-                            <input type="submit" class="btn btn-submit" value="Сформировать отчет">
+                            <button type="submit" class="btn btn-submit btn-loading">Сформировать отчет</button>
+                            <!-- <input type="submit" class="btn btn-submit btn-loading" value="Сформировать отчет"> -->
                         </div>
                     </div>
                 </div>
             </form>
             <!--  Filters end  -->
+
+            <!-- Result for course -->
+            <div class="content-container">
+                <div class="excel-icon-wrap">
+                    <a href="/corporate/export/test" data-method="post">
+                        <img src="/img/corp/icons/excel.png" alt="Excel">
+                    </a>
+                </div>
+                <div class="table-wrap tests-wrap date-constructor-courses">
+                    <div class="custom-table done-test ratings-courses-table">
+                        <div class="custom-table__header flex j-s-b">
+                            <div class="custom-table__col">Курсы</div>
+                            <div class="custom-table__col"></div>
+                            <div class="custom-table__col">Дата старта</div>
+                        </div>
+                        <div class="custom-table__body">
+                            <div class="custom-table__row flex j-s-b">
+                                <div class="custom-table__cell">Как повысить лояльность персонала?</div>
+                                <div class="custom-table__cell">
+                                    <a href="#" class="done-test__name courses-members-info-toggle"></a>
+                                </div>
+                                <div class="custom-table__cell">01.02.2019</div>
+                                <div class="courses-members-info" style="display: none;">
+                                    <div class="table-wrap test-details-wrap">
+                                        <div class="custom-table ratings-courses-details-table">
+                                            <div class="custom-table__header flex j-s-b">
+                                                <div class="custom-table__col">ФИО</div>
+                                                <div class="custom-table__col">Подразделение</div>
+                                                <div class="custom-table__col">Должность</div>
+                                                <div class="custom-table__col">Дата назначение курса</div>
+                                                <div class="custom-table__col">Урок</div>
+                                                <div class="custom-table__col">Дата и время прохождение курса</div>
+                                                <div class="custom-table__col">Просмотр видео</div>
+                                                <div class="custom-table__col">Скачивание материалов</div>
+                                                <div class="custom-table__col">Статус ДЗ</div>
+                                                <div class="custom-table__col">Дедлайн ДЗ</div>
+                                                <div class="custom-table__col">Дата сдачи ДЗ</div>
+                                                <div class="custom-table__col">Комментарий студента к ДЗ</div>
+                                                <div class="custom-table__col">Комментарий спикера к ДЗ</div>
+                                                <div class="custom-table__col">Результат теста</div>
+                                                <div class="custom-table__col">Использование попыток</div>
+                                                <div class="custom-table__col"></div>
+                                            </div>
+                                            <div class="custom-table__body">
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Вередница Вита Игоревна</div>
+                                                    <div class="custom-table__cell">Фабрика Эссаймент-менеджер отдела</div>
+                                                    <div class="custom-table__cell">Support Manager of production center SREDA by 4Service</div>
+                                                    <div class="custom-table__cell">01.03.2021</div>
+                                                    <div class="custom-table__cell">Урок № 5. Выполнить действие в просмотре управлении</div>
+                                                    <div class="custom-table__cell">19.02.2021 12:05</div>
+                                                    <div class="custom-table__cell">Да</div>
+                                                    <div class="custom-table__cell">Нет</div>
+                                                    <div class="custom-table__cell">Принято</div>
+                                                    <div class="custom-table__cell">23.04.21</div>
+                                                    <div class="custom-table__cell">22.04.21</div>
+                                                    <div class="custom-table__cell">
+                                                        Отправляю ДЗ с не выполненым одним пунктом
+                                                    </div>
+                                                    <div class="custom-table__cell">
+                                                        ДЗ не принято. Выполните все пункты ДЗ и отправьте его повторно
+                                                    </div>
+                                                    <div class="custom-table__cell">
+                                                        90%
+                                                        <span class="result-dot green"></span>                                                  
+                                                    </div>
+                                                    <div class="custom-table__cell">
+                                                        1/3
+                                                    </div>
+                                                    <div class="custom-table__cell">
+                                                        <a href="#"  class="show-detail-test">Перейти к анкете</a>
+                                                    </div>
+                                                </div>
+                                                <div class="detail-staff-anket-table">
+                                                    <div class="table-wrap test-details-wrap">
+                                                        <div class="custom-table test-details">
+                                                            <div class="custom-table__header flex j-s-b">
+                                                                <div class="custom-table__col">Вопрос</div>
+                                                                <div class="custom-table__col">Ответы</div>
+                                                            </div>
+                                                            <div class="custom-table__body">
+                                                                <div class="custom-table__row flex j-s-b">
+                                                                    <div class="custom-table__cell">
+                                                                        <span class="test-question">
+                                                                            1/5. Метод Mystery Shopping это:
+                                                                            <span class="result-dot green"></span>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="custom-table__cell test-answer">
+                                                                        <div class="answer-content">
+                                                                            <div class="list">
+                                                                                метод изучения аномальных явлений
+                                                                                <span class="answer-score">(0)</span>
+                                                                            </div>
+                                                                            <div class="list active">
+                                                                                метод сбора информации о конкретных случаях
+                                                                                <span class="answer-score">(5)</span>
+                                                                            </div>
+                                                                            <div class="list">
+                                                                                метод оценки рынка ценных бумаг
+                                                                                <span class="answer-score">(0)</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="custom-table__row flex j-s-b">
+                                                                    <div class="custom-table__cell">
+                                                                        <span class="test-question">
+                                                                            2/5. Можно ли выполнять
+                                                                            отраслевые оценки Тайному Покупателю?
+                                                                            <span class="result-dot yellow"></span>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="custom-table__cell test-answer">
+                                                                        <div class="answer-content">
+                                                                            <div class="list  active">
+                                                                                метод изучения аномальных явлений
+                                                                                <span class="answer-score">(10)</span>
+                                                                            </div>
+                                                                            <div class="list">
+                                                                                метод сбора информации о конкретных случаях
+                                                                                <span class="answer-score">(0)</span>
+                                                                            </div>
+                                                                            <div class="list">
+                                                                                метод оценки рынка ценных бумаг
+                                                                                <span class="answer-score">(5)</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="custom-table__row flex j-s-b">
+                                                                    <div class="custom-table__cell">
+                                                                        <span class="test-question">
+                                                                            3/5. Перед выполнением
+                                                                            визита ТП должен четко знать:
+                                                                            <span class="result-dot red"></span>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="custom-table__cell test-answer">
+                                                                        <div class="answer-content">
+                                                                            <div class="list">
+                                                                                метод изучения аномальных явлений
+                                                                                <span class="answer-score">(0)</span>
+                                                                            </div>
+                                                                            <div class="list">
+                                                                                метод сбора информации о конкретных случаях
+                                                                                <span class="answer-score">(10)</span>
+                                                                            </div>
+                                                                            <div class="list  active">
+                                                                                метод оценки рынка ценных бумаг
+                                                                                <span class="answer-score">(10)</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="custom-table__row flex j-s-b">
+                                <div class="custom-table__cell">Инструменты оценки сервиса</div>
+                                <div class="custom-table__cell">
+                                    <a href="#" class="done-test__name courses-members-info-toggle"></a>
+                                </div>
+                                <div class="custom-table__cell">01.02.2019</div>
+                                <div class="courses-members-info" style="display: none;">
+                                    <div class="table-wrap test-details-wrap">
+                                        <div class="custom-table ratings-courses-details-table">
+                                            <div class="custom-table__header flex j-s-b">
+                                                <div class="custom-table__col">ФИО</div>
+                                                <div class="custom-table__col">Подразделение</div>
+                                                <div class="custom-table__col">Должность</div>
+                                                <div class="custom-table__col">Дата назначение курса</div>
+                                                <div class="custom-table__col">Урок</div>
+                                                <div class="custom-table__col">Дата и время прохождение курса</div>
+                                                <div class="custom-table__col">Просмотр видео</div>
+                                                <div class="custom-table__col">Скачивание материалов</div>
+                                                <div class="custom-table__col">Статус ДЗ</div>
+                                                <div class="custom-table__col">Дедлайн ДЗ</div>
+                                                <div class="custom-table__col">Дата сдачи ДЗ</div>
+                                                <div class="custom-table__col">Комментарий студента к ДЗ</div>
+                                                <div class="custom-table__col">Комментарий спикера к ДЗ</div>
+                                                <div class="custom-table__col">Результат теста</div>
+                                                <div class="custom-table__col">Использование попыток</div>
+                                            </div>
+                                            <div class="custom-table__body">
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Вередница Вита Игоревна</div>
+                                                    <div class="custom-table__cell">Фабрика Эссаймент-менеджер отдела</div>
+                                                    <div class="custom-table__cell">developer</div>
+                                                    <div class="custom-table__cell">01.03.2021</div>
+                                                    <div class="custom-table__cell">Урок № 5. Выполнить действие в просмотре управлении</div>
+                                                    <div class="custom-table__cell">19.02.2021 12:05</div>
+                                                    <div class="custom-table__cell">Да</div>
+                                                    <div class="custom-table__cell">Нет</div>
+                                                    <div class="custom-table__cell">Принято</div>
+                                                    <div class="custom-table__cell">23.04.21</div>
+                                                    <div class="custom-table__cell">22.04.21</div>
+                                                    <div class="custom-table__cell">
+                                                        дз выполнила                                
+                                                    </div>
+                                                    <div class="custom-table__cell">
+                                                        Спасибо за прохождение теста, результат засчитан. 
+                                                    </div>
+                                                    <div class="custom-table__cell">
+                                                        90%
+                                                        <span class="result-dot green"></span>                                                  
+                                                    </div>
+                                                    <div class="custom-table__cell">
+                                                        1/3
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Result for test -->
+            <div class="content-container date-constructor-tests">
+                <div class="excel-icon-wrap">
+                    <a href="/corporate/export/test" data-method="post">
+                        <img src="/img/corp/icons/excel.png" alt="Excel">
+                    </a>
+                </div>
+                <div class="table-wrap tests-wrap date-constructor-tests">
+                    <div class="custom-table done-test ratings-courses-table">
+                        <div class="custom-table__header flex j-s-b">
+                            <div class="custom-table__col">Тесты</div>
+                            <div class="custom-table__col"></div>
+                            <div class="custom-table__col">Дата старта</div>
+                        </div>
+                        <div class="custom-table__body">
+                            <div class="custom-table__row flex j-s-b">
+                                <div class="custom-table__cell">Работа на портале Shopmetrics</div>
+                                <div class="custom-table__cell">
+                                    <a href="#" class="done-test__name courses-members-info-toggle"></a>
+                                </div>
+                                <div class="custom-table__cell">01.02.2019</div>
+                                <div class="courses-members-info" style="display: none;">
+                                    <div class="table-wrap test-details-wrap">
+                                        <div class="custom-table ratings-courses-details-table">
+                                            <div class="custom-table__header flex j-s-b">
+                                                <div class="custom-table__col">ФИО</div>
+                                                <div class="custom-table__col">Подразделение</div>
+                                                <div class="custom-table__col">Должность</div>
+                                                <div class="custom-table__col">Дата назначения теста</div>
+                                                <div class="custom-table__col">Дата и время прохождения теста</div>
+                                                <div class="custom-table__col">Результат теста</div>
+                                                <div class="custom-table__col">Номер попытки</div>
+                                                <div class="custom-table__col"></div>
+                                            </div>
+                                            <div class="custom-table__body">
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Вередница Вита Игоревна</div>
+                                                    <div class="custom-table__cell">Фабрика Эссаймент-менеджер отдела</div>
+                                                    <div class="custom-table__cell">Support Manager of production center SREDA by 4Service</div>
+                                                    <div class="custom-table__cell">01.03.2021</div>
+                                                    <div class="custom-table__cell">19.02.2021 12:05</div>
+                                                    <div class="custom-table__cell">
+                                                        90%
+                                                        <span class="result-dot green"></span>                                                  
+                                                    </div>
+                                                    <div class="custom-table__cell">
+                                                        1/3
+                                                    </div>
+                                                    <div class="custom-table__cell">
+                                                        <a href="#"  class="show-detail-test">Перейти к анкете</a>
+                                                    </div>
+                                                </div>
+                                                <div class="detail-staff-anket-table">
+                                                    <div class="table-wrap test-details-wrap">
+                                                        <div class="custom-table test-details">
+                                                            <div class="custom-table__header flex j-s-b">
+                                                                <div class="custom-table__col">Вопрос</div>
+                                                                <div class="custom-table__col">Ответы</div>
+                                                            </div>
+                                                            <div class="custom-table__body">
+                                                                <div class="custom-table__row flex j-s-b">
+                                                                    <div class="custom-table__cell">
+                                                                        <span class="test-question">
+                                                                            1/5. Метод Mystery Shopping это:
+                                                                            <span class="result-dot green"></span>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="custom-table__cell test-answer">
+                                                                        <div class="answer-content">
+                                                                            <div class="list">
+                                                                                метод изучения аномальных явлений
+                                                                                <span class="answer-score">(0)</span>
+                                                                            </div>
+                                                                            <div class="list active">
+                                                                                метод сбора информации о конкретных случаях
+                                                                                <span class="answer-score">(5)</span>
+                                                                            </div>
+                                                                            <div class="list">
+                                                                                метод оценки рынка ценных бумаг
+                                                                                <span class="answer-score">(0)</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="custom-table__row flex j-s-b">
+                                                                    <div class="custom-table__cell">
+                                                                        <span class="test-question">
+                                                                            2/5. Можно ли выполнять
+                                                                            отраслевые оценки Тайному Покупателю?
+                                                                            <span class="result-dot yellow"></span>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="custom-table__cell test-answer">
+                                                                        <div class="answer-content">
+                                                                            <div class="list  active">
+                                                                                метод изучения аномальных явлений
+                                                                                <span class="answer-score">(10)</span>
+                                                                            </div>
+                                                                            <div class="list">
+                                                                                метод сбора информации о конкретных случаях
+                                                                                <span class="answer-score">(0)</span>
+                                                                            </div>
+                                                                            <div class="list">
+                                                                                метод оценки рынка ценных бумаг
+                                                                                <span class="answer-score">(5)</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="custom-table__row flex j-s-b">
+                                                                    <div class="custom-table__cell">
+                                                                        <span class="test-question">
+                                                                            3/5. Перед выполнением
+                                                                            визита ТП должен четко знать:
+                                                                            <span class="result-dot red"></span>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="custom-table__cell test-answer">
+                                                                        <div class="answer-content">
+                                                                            <div class="list">
+                                                                                метод изучения аномальных явлений
+                                                                                <span class="answer-score">(0)</span>
+                                                                            </div>
+                                                                            <div class="list">
+                                                                                метод сбора информации о конкретных случаях
+                                                                                <span class="answer-score">(10)</span>
+                                                                            </div>
+                                                                            <div class="list  active">
+                                                                                метод оценки рынка ценных бумаг
+                                                                                <span class="answer-score">(10)</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Result for summary data -->
+            <div class="content-container">
+                <div class="excel-icon-wrap">
+                    <a href="/corporate/export/test" data-method="post">
+                        <img src="/img/corp/icons/excel.png" alt="Excel">
+                    </a>
+                </div>
+                <div class="date-constructor-summary">
+                    <div class="table-wrap test-details-wrap">
+                        <div class="custom-table ratings-courses-details-table">
+                            <div class="custom-table__header flex j-s-b">
+                                <div class="custom-table__col">ФИО</div>
+                                <div class="custom-table__col">Подразделение</div>
+                                <div class="custom-table__col">Должность</div>
+                                <div class="custom-table__col">Дата назначения обучения/ теста</div>
+                                <div class="custom-table__col">Дата начала обучения/ теста</div>
+                                <div class="custom-table__col">Дата последней активности</div>
+                                <div class="custom-table__col">Курс</div>
+                                <div class="custom-table__col">Прогресс курса <br>(в уроках)</div>
+                                <div class="custom-table__col">Тест</div>
+                                <div class="custom-table__col">Результат теста <br>(в %)</div>
+                                <div class="custom-table__col">Использовано попыток</div>
+                            </div>
+                            <div class="custom-table__body">
+                                <div class="custom-table__row flex j-s-b">
+                                    <div class="custom-table__cell">Вередница Вита Игоревна</div>
+                                    <div class="custom-table__cell">Фабрика Эссаймент-менеджер отдела</div>
+                                    <div class="custom-table__cell">Support Manager of production center SREDA by 4Service</div>
+                                    <div class="custom-table__cell">01.03.2021</div>
+                                    <div class="custom-table__cell">01.03.2021</div>
+                                    <div class="custom-table__cell">19.02.2021</div>
+                                    <div class="custom-table__cell">Обучение Shopmetrics</div>
+                                    <div class="custom-table__cell">8/15 (53%)</div>
+                                    <div class="custom-table__cell">
+                                        Работа на портале Shopmetrics
+                                    </div>
+                                    <div class="custom-table__cell">
+                                        90%
+                                        <span class="result-dot green"></span>                                                  
+                                    </div>
+                                    <div class="custom-table__cell">
+                                        1/3
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 
@@ -269,10 +692,113 @@
     <script src="../../script/common.js"></script>
 
     <script>
+        function sendDateAjax(period, dates) {
+            if (period) {
+                $.ajax({
+                    type: 'POST',
+                    url: "/corporate/ajax/filter-data-constructor",
+                    dataType: "json",
+                    data: {
+                        period: period,
+                        dates: dates
+                    },
+                }).done(function (data) {
+                    if (data["courses"]) {
+                        setSelect('.select-for-course', data["courses"]);
+                    }
+                    if (data["tests"]) {
+                        setSelect('.select-for-test', data["tests"]);
+                    }
+                    console.log('Запрос отправлен');
+                }).fail(function (data) {
+                    // не удалось выполнить запрос к серверу
+                    console.log(data);
+                    console.log('Запрос не принят');
+                });
+            }
+        }
+        
+        function sendCoursesAjax(courseIds) {
+            if (courseIds) {
+                $.ajax({
+                    type: 'POST',
+                    url: "/corporate/ajax/get-tests-data-constructor",
+                    dataType: "json",
+                    data: {
+                        courseIds: courseIds,
+                    },
+                }).done(function (data) {
+                    console.log(data);
+                    if (data["tests"]) {
+                        setSelect('.select-for-test', data["tests"]);
+                    }
+                    console.log('Запрос отправлен');
+                }).fail(function (data) {
+                    // не удалось выполнить запрос к серверу
+                    console.log(data);
+                    console.log('Запрос не принят');
+                });
+            }
+        }
+        
+        function setSelect (container, data) {
+            if (!Object.entries)
+                Object.entries = function (obj) {
+                    var ownProps = Object.keys(obj),
+                        i = ownProps.length,
+                        resArray = new Array(i); // preallocate the Array
+                    while (i--)
+                        resArray[i] = [ownProps[i], obj[ownProps[i]]];
+    
+                    return resArray;
+                };
+            let valuesArray = Object.entries(data);
+            let chosedCourse = $(container).find('.filter-value select').val();
+            if (valuesArray) {
+                let selectHtml =
+                    '<div class="filter multiple-select custom-select-filter">'
+                    + '    <select multiple name="test[]">';
+                // + '      <option value="">Выбрать урок</option>';
+                for (let i = 0; i < valuesArray.length; i++) {
+                    selectHtml += '<option value=" ' + valuesArray[i][0] + '">' + valuesArray[i][1];
+                    if(chosedCourse.includes(valuesArray[i][0])){
+                        selectHtml +=  ' selected ' + '</option>'
+                    }
+                    else {
+                        selectHtml += '</option>'
+                    }
+                }
+                selectHtml +=
+                    '   </select>'
+                    + '</div>';
+                $(container).find('.filter-value').html(' ');
+                $(selectHtml).appendTo($(container).find('.filter-value'));
+                $(container + ' select').select2({
+                    width: 'style',
+                    minimumResultsForSearch: Infinity,
+                    language: {
+                        noResults: function (params) {
+                            return "Данные не найдены";
+                        }
+                    }
+                });
+            }
+        }
+       
+       
         $(document).ready(function () {
             $(function () {
+                $('.select-for-course select').on('change', function(e){
+                    var courseIds = $(this).val();
+                    if(courseIds.length > 0){
+                        sendCoursesAjax(courseIds);
+                    }
+                });
                 $('.date-filter').on('change paste keyup', function () {
-                    $('.custom-filter-date-picker').find('.select2-selection__rendered').html($(this).val());
+                    if ($(this).parents('.filter-value').find('select').val() == 'any') {
+                        sendDateAjax('any', $(this).val());
+                        $('.custom-filter-date-picker').find('.select2-selection__rendered').html($(this).val());
+                    }
                 });
                 $('.date-filter').daterangepicker({
                     opens: 'rigth',
@@ -293,9 +819,7 @@
     <script>
         jQuery(function ($) {
             $(document).ready(function () {
-                $('.select-search select').customSelect({
-                    search: true
-                });
+
                 $('.multiple-select select').select2({
                     width: 'style',
                     minimumResultsForSearch: Infinity,
@@ -305,15 +829,18 @@
                         }
                     }
                 });
-                $('.custom-filter-date-picker').change(function(e){
+                $('.custom-filter-date-picker').change(function (e) {
                     var $value = $(this).find('option:selected');
                     if ($value.text() == 'Произвольный выбор') {
                         $('.custom-filter-date-picker .date-filter').click();
                     }
+                    else {
+                        sendDateAjax($value.attr('value'));
+                    }
                 });
-                $('.select-for-type').on('change', 'select', function(e){
+                $('.select-for-type').on('change', 'select', function (e) {
                     var $option = $(this).find('option:selected');
-                    if($option.hasClass('data-for-course')){
+                    if ($option.hasClass('data-for-course')) {
                         $('.select-for-test').fadeOut(0);
                         console.log($('.select-for-test select'));
                         $('.select-for-test select').val([]);
@@ -324,31 +851,132 @@
                         $('.select-for-test').fadeIn(0);
                     }
                 })
-                // if pick course
-                // $('.select-for-course').on('change', 'select', function(e){
-                //     let courseOption = $(this).val().toString();
-                //     let courseId = courseOption.split('_')[1];
-                //     if(courseId){
-                //         $.ajax ({
-                //             type: 'POST',
-                //             url: "/ajax/get-course-lessons",
-                //             processData: false,
-                //             contentType: false,
-                //             dataType: "json",
-                //             data: {
-                //                 courseId: courseId 
-                //             }
-                //         }).done(function (data) {
-                //             console.log(data);
-                //             console.log('Курс выбран');
-                //         }).fail(function (data) {
-                //             // не удалось выполнить запрос к серверу
-                //             console.log(data);
-                //             console.log('Запрос не принят');
-                //         });
-                //     }
-                // });
             });
+        });
+
+        //show table
+        $('.table-wrap').on("click", ".courses-members-info-toggle", function () {
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active');
+                $(this).parents('.custom-table__row').find('.rating-question-info-toggle').removeClass('active')
+                $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                $(this).parents('.custom-table').next('.table-clone-info').remove();
+                $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                $(this).parents('.custom-table').next('.table-clone-info').remove();
+                if ($(this).parents('.custom-table').next('.ratings-courses-table') && !$(this).parents('.custom-table').find('.rating-question-info-toggle').hasClass('active')) {
+                    $(this).parents('.custom-table').next().find('.custom-select').remove();
+                    $(this).parents('.custom-table__row').after($(this).parents('.custom-table').next('.ratings-courses-table').find('.custom-table__body').html());
+                    $(this).parents('.custom-table').next().remove();
+                }
+                $('.cust-select-wrap select').customSelect(
+                    {
+                        hideCallback: function () {
+                            var $value = $(this).find('[class$="value"]');
+                            console.log($value.text());
+
+                            if ($value.text() == 'Произвольный выбор') {
+                                console.log($value);
+                                $('.date-filter').click();
+                            }
+                        }
+                    }
+                );
+            }
+            else {
+                if ($(this).parents('.custom-table__row').find('.rating-question-info-toggle').hasClass('active')) {
+                    $(this).parents('.custom-table__row').find('.rating-question-info-toggle').removeClass('active');
+                    $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                    $(this).parents('.custom-table').next('.table-clone-info').remove();
+                    if ($(this).parents('.custom-table').next('.ratings-courses-table') && !$(this).parents('.custom-table').find('.courses-members-info-toggle').hasClass('active')) {
+                        $(this).parents('.custom-table').next().find('.custom-select').remove();
+                        $(this).parents('.custom-table__row').after($(this).parents('.custom-table').next('.ratings-courses-table').find('.custom-table__body').html());
+                        $(this).parents('.custom-table').next().remove();
+                    }
+                    $('.cust-select-wrap select').customSelect(
+                        {
+                            hideCallback: function () {
+                                var $value = $(this).find('[class$="value"]');
+                                console.log($value.text());
+                                if ($value.text() == 'Произвольный выбор') {
+                                    console.log($value);
+                                    $('.date-filter').click();
+                                }
+                            }
+                        }
+                    );
+                }
+                if ($(this).parents('.custom-table__row').find('.courses-passed-info-toggle').hasClass('active')) {
+                    $(this).parents('.custom-table__row').find('.courses-passed-info-toggle').removeClass('active');
+                    $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                    $(this).parents('.custom-table').next('.table-clone-info').remove();
+                    if ($(this).parents('.custom-table').next('.ratings-courses-table')) {
+                        $(this).parents('.custom-table').next().find('.custom-select').remove();
+                        $(this).parents('.custom-table__row').after($(this).parents('.custom-table').next('.ratings-courses-table').find('.custom-table__body').html());
+                        $(this).parents('.custom-table').next().remove();
+                    }
+                    $('.cust-select-wrap select').customSelect(
+                        {
+                            hideCallback: function () {
+                                var $value = $(this).find('[class$="value"]');
+                                console.log($value.text());
+                                if ($value.text() == 'Произвольный выбор') {
+                                    console.log($value);
+                                    $('.date-filter').click();
+                                }
+                            }
+                        }
+                    );
+                }
+                if ($(this).parents('.custom-table__row').find('.courses-not-passed-info-toggle').hasClass('active')) {
+                    $(this).parents('.custom-table__row').find('.courses-not-passed-info-toggle').removeClass('active');
+                    $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                    $(this).parents('.custom-table').next('.table-clone-info').remove();
+                    if ($(this).parents('.custom-table').next('.ratings-courses-table')) {
+                        $(this).parents('.custom-table').next().find('.custom-select').remove();
+                        $(this).parents('.custom-table__row').after($(this).parents('.custom-table').next('.ratings-courses-table').find('.custom-table__body').html());
+                        $(this).parents('.custom-table').next().remove();
+                    }
+                    $('.cust-select-wrap select').customSelect(
+                        {
+                            hideCallback: function () {
+                                var $value = $(this).find('[class$="value"]');
+                                console.log($value.text());
+                                if ($value.text() == 'Произвольный выбор') {
+                                    console.log($value);
+                                    $('.date-filter').click();
+                                }
+                            }
+                        }
+                    );
+                }
+                $(this).addClass('active');
+                var NewTable = '<div class="table-clone-info">' + $(this).parents('.custom-table__row').find('.courses-members-info').html() + '</div>';
+                if ($(this).parents('.custom-table__row').nextAll().length > 0) {
+                    var headerStr = $(this).parents('.ratings-courses-table').find('.custom-table__header').html();
+                    NewTable = NewTable + '<div class="custom-table done-test ratings-courses-table table-clone"><div class="custom-table__header flex j-s-b">' + headerStr + '</div><div class="custom-table__body">';
+                    var nextAll = $(this).parents('.custom-table__row').nextAll();
+                    nextAll.each(function (index, el) {
+                        NewTable += '<div class="custom-table__row flex j-s-b f-w">' + el.innerHTML + '</div>';
+                    });
+                    $(this).parents('.custom-table__row').nextAll().remove();
+                    NewTable = NewTable + '</div></div>';
+                }
+                $(this).parents('.ratings-courses-table').after(NewTable);
+                $('.table-clone-info').find('.courses-members-info').fadeIn();
+            }
+        });
+        //Show detail anket
+        $('#main').on('click', '.show-detail-test', function(e){
+            if($(this).hasClass('active')){
+                $(this).removeClass('active');
+                $(this).text('Перейти к анкете');
+                $($(this).parents('.custom-table__row')[0]).next('.detail-staff-anket-table').fadeOut(300);
+            }
+            else {
+                $(this).addClass('active');
+                $(this).text('Скрыть анкету');
+                $($(this).parents('.custom-table__row')[0]).next('.detail-staff-anket-table').fadeIn(300);
+            }
         });
     </script>
 </body>

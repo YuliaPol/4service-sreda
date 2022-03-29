@@ -363,7 +363,9 @@
                     $(this).parents('.members-table-heading').find('button').show();
                     $(this).parents('.members-table-heading').find('.custom-select__dropdown').show();
                 });
-                $('.delete-member').magnificPopup();
+               
+
+
                 $('.test-member-table').on('click', '.delete-member', function () {
                     $('#remove-course-popup #delete-name').html($(this).data('name'));
                 });

@@ -100,6 +100,7 @@ jQuery(function ($) {
             {
                 appendTo: ".test-table-constructor",
                 cancel: ".circle-add, input, select, label",
+                containment: ".vac-settings__block-content",
                 axis: "y",
                 items: "> .custom-table__body",
                 deactivate: function (event, ui) {

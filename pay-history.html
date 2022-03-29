@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Styles -->
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/roman.css">
     <link rel="stylesheet" href="style/i-style/style.css">
     <link rel="stylesheet" href="style/media.css">
     <link rel="stylesheet" href="style/libs/slider.css">
@@ -27,7 +28,7 @@
                 <div class="line bot-line"></div>
             </div>
         </div>
-        <div class="right-block flex a-c">
+        <div class="right-block flex a-c add-user-notifications">
             <nav class="header-navigation" id="left-menu">
                 <ul class="menu">
                     <li>
@@ -38,10 +39,12 @@
                     <li><a class="menu-item" href="">Контакты</a></li>
                 </ul>
             </nav>
-            <div id="header-bell" class="bell p-r">
+
+
+            <!-- <div id="header-bell" class="bell p-r">
                 <div class="bell-notifications">3</div>
                 <a href="notifications.html"><i class="bell-img i-bell"></i></a>
-            </div>
+            </div> -->
         </div>
     </header>
     <aside id="left-side-bar">
@@ -84,8 +87,80 @@
             </ul>
         </nav>
     </aside>
-    <main id="main">
+    <div class="user-notifications">
+        <div class="bell p-r user-notification-icon">
+            <div class="bell-notifications count-element">24</div>
+            <i class="bell-img i-bell"></i>
+        </div>
 
+        <aside class="user-notification-content">
+            <div style="text-align: center">
+
+                    <div class="user-notification-item">
+                        <div class="title">title</div>
+                        <div class="name">Name name</div>
+                        <div class="btm-block">
+                            <div class="btn-container">
+                                <a class="btn btn-accept" onclick="return confirm('Вы уверены?')" href="#">Принять</a>
+                                <a class="btn btn-reject" onclick="return confirm('Вы уверены?')" href="#">Отклонить</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-notification-item">
+                        <div class="title">title</div>
+                        <div class="name">Name name</div>
+                        <div class="btm-block">
+                            <div class="btn-container">
+                                <a class="btn btn-accept" onclick="return confirm('Вы уверены?')" href="#">Принять</a>
+                                <a class="btn btn-reject" onclick="return confirm('Вы уверены?')" href="#">Отклонить</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-notification-item">
+                        <div class="title">title</div>
+                        <div class="name">Name name</div>
+                        <div class="btm-block">
+                            <div class="btn-container">
+                                <a class="btn btn-accept" onclick="return confirm('Вы уверены?')" href="#">Принять</a>
+                                <a class="btn btn-reject" onclick="return confirm('Вы уверены?')" href="#">Отклонить</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-notification-item">
+                        <div class="title">title</div>
+                        <div class="name">Name name</div>
+                        <div class="btm-block">
+                            <div class="btn-container">
+                                <a class="btn btn-accept" onclick="return confirm('Вы уверены?')" href="#">Принять</a>
+                                <a class="btn btn-reject" onclick="return confirm('Вы уверены?')" href="#">Отклонить</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-notification-item">
+                        <div class="title">title</div>
+                        <div class="name">Name name</div>
+                        <div class="btm-block">
+                            <div class="btn-container">
+                                <a class="btn btn-accept" onclick="return confirm('Вы уверены?')" href="#">Принять</a>
+                                <a class="btn btn-reject" onclick="return confirm('Вы уверены?')" href="#">Отклонить</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-notification-item">
+                        <div class="title">title</div>
+                        <div class="name">Name name</div>
+                        <div class="btm-block">
+                            <div class="btn-container">
+                                <a class="btn btn-accept" onclick="return confirm('Вы уверены?')" href="#">Принять</a>
+                                <a class="btn btn-reject" onclick="return confirm('Вы уверены?')" href="#">Отклонить</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <h3 class="no-data">Данные не найдены</h3> -->
+            </div>
+        </aside>
+    </div>
+    <main id="main">
         <!-- Top Buttons Conrainer Start -->
         <div class="top-buttons-wrappper flex f-w">
             <a href="pending-peyment.html" class="pay-history-btn box-shadow">
@@ -148,6 +223,25 @@
         </section>
     </main>
 </div>
+<script>
+    (() => {
+        // const element = $('.user-notifications');
+        // const notfication = element.clone();
+
+        // element.remove();
+        // $('#main').prepend(notfication);
+
+        $('.user-notification-icon').on('click', e => {
+            $('.user-notification-content').toggleClass('notification-opened');
+        });
+        
+        $(document).on('click', function (e) {
+            if ($(e.target).closest('.user-notifications').length === 0) {
+                $('.user-notification-content').removeClass('notification-opened');
+            }
+        });
+    })();
+</script>
 <script src="script/inner.js"></script>
 <script src="script/resp-menu.js"></script>
 </body>
